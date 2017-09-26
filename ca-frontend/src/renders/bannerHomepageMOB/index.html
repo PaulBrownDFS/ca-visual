@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Mobile Banner</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/renders/bannerHomepage/bannerHomepage.min.css"/>
     <link rel="stylesheet" href="../../../dist/renders/bannerHomepageMOB/bannerHomepageMOB.min.css"/>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1">
@@ -38,8 +38,8 @@
 <script src="https://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ=" crossorigin="anonymous"></script>
 <!-- /build -->
 
-<!-- build:js https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- build:js ../../reusable/carousel.js  -->
+<script src="../../reusable/carousel.js"></script>
 <!-- /build -->
 
 
@@ -106,7 +106,7 @@ dfs.carouselText = function(target, text){
             if( countDownOBj.total > 0 && countDownOBj.days < daysStart) {
               console.log('Show Countdown on Slide: ' + messageID );
 
-              $('h2.message'+ messageID + 'b, h2.message'+ messageID + 'a').addClass('cdText');
+              $('h2.message'+ messageID + 'b, h2.message'+ messageID + 'a,p.message' + messageID + 'c').addClass('cdText');
 
               dayOrDays = countDownOBj.days > 1 ? "DAYS" : "DAY";
               var updateCountdown = setInterval(function(){
