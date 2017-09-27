@@ -1,0 +1,44 @@
+<div class="carouselContainer">
+    <h2 style="text-align:center;">DFS Content Authoring Carousel Example V1.0</h2>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        {{#each slides}}
+          <li data-target="#myCarousel" data-slide-to="{{@index}}" {{#if @first}} class="active"{{/if}}></li>
+        {{/each}}
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        {{#each slides}}
+          <div class="item {{#if @first}} active {{/if}}">
+            <a href="{{productURL}}">
+              <picture>
+                <source media="(max-width: 1365px)" srcset="//i1.adis.ws/i/dfs/?layer0=[canvas=1024,488]&layer1=[src=/i/dfs/{{productImage.name}}&w=1026&h619&anchor=l&left=342]&layer2=[/i/dfs/{{image.name}}&left=0&h=100%]&layer3=[/i/dfs/{{sidebarCharacter.name}}&{{desktopCharacterCrop}}&h=70%&bottom=0&left=30&anchor=bl]&layer4=[src=/i/dfs/{{pricingImage.name}}&anchor=br&right=10&bottom=10]&fmt.jpeg.chroma=1,1,1&w=1024&qlt=80">
+
+                <img src="//i1.adis.ws/i/dfs/?layer0=[canvas=1366,619]&layer1=[src=/i/dfs/{{productImage.name}}&w=1026&h619&anchor=l&left=342]&layer2=[/i/dfs/{{image.name}}&left=0&h=100%]&layer3=[/i/dfs/{{sidebarCharacter.name}}&{{desktopCharacterCrop}}&h=70%&bottom=0&left=30&anchor=bl]&layer4=[src=/i/dfs/{{pricingImage.name}}&anchor=br&right=10&bottom=10]&qlt=80&fmt.jpeg.chroma=1,1,1&w=1366">
+              </picture>
+              <div class="bannerTextContainer {{#if hasCountdown}} carCountdown {{/if}}"
+                  data-countdown="{{countdownDeadline}}"
+                  data-messageid="1"
+                  data-startdays="{{DaysBeforeEnd}}">
+                  <h2 class="message1a">{{messagea}}</h2>
+                  <h2 class="message1b">{{messageb}}</h2>
+                  <p class="message1c">{{messagec}}</p>
+              </div>
+            </a>
+          </div>
+        {{/each}}
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
