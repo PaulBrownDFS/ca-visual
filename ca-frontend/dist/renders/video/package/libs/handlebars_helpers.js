@@ -144,11 +144,23 @@ if (typeof Handlebars !== 'undefined') {
         var dataElement = '<script type="text/plain" class="video-settings"' + s + ' ></script>';
         return new Handlebars.SafeString(dataElement);
     });
+
+    Handlebars.registerHelper('times', function(n, block) {
+    var accum = '';
+    for(var i = 0; i < n; ++i) {
+        block.data.index = i;
+        block.data.first = i === 0;
+        block.data.last = i === (n - 1);
+        accum += block.fn(this);
+    }
+        return accum;
+    });
+
+    Handlebars.registerHelper("inc", function(value, options) {
+        return parseInt(value) + 1;
+    });
 }
 
 else {
     console.warn('Handlebars is not defined, please make sure you included Handlebars library');
 }
-
-
-
