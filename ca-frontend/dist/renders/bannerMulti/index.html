@@ -57,7 +57,13 @@
 var slideData = {};
     slideData.slides = [];
 
-var slideIDs = ['57986e66-debe-40ca-8481-01338f415429','e47ea56d-8019-43b9-8eca-2c4a171f5332'];
+var slideIDs = [
+                  '57986e66-debe-40ca-8481-01338f415429',
+                  'e47ea56d-8019-43b9-8eca-2c4a171f5332',
+                  '8ce65349-10d0-43da-a667-c9e2c3db29ea',
+                  '52a15fec-513c-4d63-880d-d63dcc38ff92',
+                  '9f1d1e72-085d-4731-a910-f5c82a325755'
+                ];
 
 var cacheBuster = Math.random().toString(36).substr(2, 12);
 
@@ -94,7 +100,7 @@ var contentTree = amp.inlineContent(data)[0];
 
 function renderCarousel() {
   var template = Handlebars.template(AmpCa.templates.bannerMulti);
-  console.log(template(slideData));
+  // console.log(template(slideData));
   document.querySelectorAll(".js_banner_wrap")[0].innerHTML = template(slideData);
 }
 
@@ -139,7 +145,7 @@ dfs.carouselText = function(target, text){
             data = $(_this).data(),
             deadline = data.countdown,
             daysStart = data.startdays,
-            messageID = data.messageid;
+            messageID = data.messageid.replace('slide_', '');
             console.log(deadline + ' , ' + daysStart + ' , ' + messageID);
             var countDownOBj = getTimeRemaining(deadline);
             console.log('Days: ' + countDownOBj.days);

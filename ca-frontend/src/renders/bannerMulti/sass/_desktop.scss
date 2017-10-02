@@ -232,9 +232,12 @@
 h2.message1b.cdText,h2.message2b.cdText,h2.message3b.cdText,h2.message4b.cdText,h2.message5b.cdText {
     font-size: 16px;
     margin: 0;
+    position: relative;
+    top: -12px;
 }
 h2.message1a.cdText,h2.message2a.cdText,h2.message3a.cdText,h2.message4a.cdText,h2.message5a.cdText {
-    padding-top: 12px;
+    position: relative;
+    top: -8px;
 }
 .carousel-inner .item a {
   color:#000;
@@ -243,7 +246,6 @@ h2.message1a.cdText,h2.message2a.cdText,h2.message3a.cdText,h2.message4a.cdText,
     width: 360px;
     text-align: center;
     position: absolute;
-    bottom: 172px;
     min-height: 67px;
     font-family: sans-serif;
 }
@@ -314,7 +316,6 @@ h2.message1a.cdText,h2.message2a.cdText,h2.message3a.cdText,h2.message4a.cdText,
     width: 270px;
     text-align: center;
     position: absolute;
-    bottom: 115px;
   }
   .carousel-inner .item h2 {
     font-size: 16px;
@@ -326,10 +327,12 @@ h2.message1a.cdText,h2.message2a.cdText,h2.message3a.cdText,h2.message4a.cdText,
   }
   h2.message1b.cdText, h2.message2b.cdText, h2.message3b.cdText, h2.message4b.cdText, h2.message5b.cdText {
     font-size: 13px !important;
-    margin: 0;
+    position: relative;
+    top: -8px;
   }
   h2.message1a.cdText,h2.message2a.cdText,h2.message3a.cdText,h2.message4a.cdText,h2.message5a.cdText {
-      padding-top: 8px;
+    position: relative;
+    top: -5px;
   }
 
 }
@@ -339,8 +342,8 @@ h2.message1a.cdText,h2.message2a.cdText,h2.message3a.cdText,h2.message4a.cdText,
   .carousel-inner .item h2 {
       font-family: sans-serif;
       font-weight: 700;
-      font-size: 20px;
-      line-height: 19px;
+      font-size: 18px;
+      line-height: 17px;
       margin: 2px;
       color: #000;
   }
@@ -351,7 +354,6 @@ h2.message1a.cdText,h2.message2a.cdText,h2.message3a.cdText,h2.message4a.cdText,
       width: 260px;
       text-align: center;
       position: absolute;
-      bottom: 38px;
       min-height: 64px;
   }
   .carouselContainer {
@@ -404,15 +406,13 @@ h2.message1a.cdText,h2.message2a.cdText,h2.message3a.cdText,h2.message4a.cdText,
   }
   h2.message1b.cdText,h2.message2b.cdText,h2.message3b.cdText,h2.message4b.cdText,h2.message5b.cdText {
     font-size: 15px;
-    position: relative;
-    top: -5px;
+    top: -8px;
   }
   h2.message1a.cdText,h2.message2a.cdText,h2.message3a.cdText,h2.message4a.cdText,h2.message5a.cdText {
-      margin: 0 0 5px;
+      top: -5px;
   }
   p.message1c,p.message2c,p.message3c,p.message4c,p.message5c {
       font-size: 12px;
-      position: relative;
       top: 0px;
   }
 }

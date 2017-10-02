@@ -41,7 +41,7 @@
     AmpCa.utils.getCaData({
         auth: {
             baseUrl: 'https://c1.adis.ws',
-            id: '57986e66-debe-40ca-8481-01338f415429',
+            id: '9f1d1e72-085d-4731-a910-f5c82a325755',
             store: 'dfs'
         },
         callback: function (data) {
@@ -87,7 +87,7 @@ dfs.carouselText = function(target, text){
             data = $(_this).data(),
             deadline = data.countdown,
             daysStart = data.startdays,
-            messageID = data.messageid;
+            messageID = data.messageid.replace('slide_','');
             console.log(deadline + ' , ' + daysStart + ' , ' + messageID);
             var countDownOBj = getTimeRemaining(deadline);
             console.log('Days: ' + countDownOBj.days);

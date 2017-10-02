@@ -28,7 +28,7 @@
                 "default": true,
                 "category": "visualization",
                 "label": "Default Visualization",
-                "uri": "http://dev-solutions.s3.amazonaws.com/custom-demos/dfs2/dist/renders/bannerIM/package/visualisation.html"
+                "uri": "https://paulbrowndfs.github.io/homePageCarousel/visualisation.html"
             }
         ]
     },
@@ -110,6 +110,17 @@
                     },
                     "_semanticType": "http://semantic-type.cms.amplience.com/asset"
                 },
+                "desktopCharacterSize": {
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 255,
+                    "_label": {
+                        "value": "Desktop Character Size",
+                        "hint": "h=400 etc..",
+                        "validation": "max length 255 chars"
+                    },
+                    "_semanticType": "http://semantic-type.cms.amplience.com/text"
+                },
                 "desktopCharacterCrop": {
                     "type": "string",
                     "minLength": 0,
@@ -118,6 +129,17 @@
                         "value": "Desktop Character Crop",
                         "hint": "",
                         "validation": ""
+                    },
+                    "_semanticType": "http://semantic-type.cms.amplience.com/text"
+                },
+                "mobileCharacterSize": {
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 255,
+                    "_label": {
+                        "value": "Mobile Character Size",
+                        "hint": "h=400 etc..",
+                        "validation": "max length 255 chars"
                     },
                     "_semanticType": "http://semantic-type.cms.amplience.com/text"
                 },
@@ -187,6 +209,28 @@
                     },
                     "_semanticType": "http://semantic-type.cms.amplience.com/text"
                 },
+                "textBottomPosition": {
+                    "type": "number",
+                    "_label": {
+                        "value": "Text Box Bottom px Position Value",
+                        "hint": "Enter Numbers Only",
+                        "validation": "Valid entries are between 0 and 5000>"
+                    },
+                    "minimum": 0,
+                    "maximum": 5000,
+                    "_semanticType": "http://semantic-type.cms.amplience.com/number"
+                },
+                "textLeftPosition": {
+                    "type": "number",
+                    "_label": {
+                        "value": "Text Box Left px Position Value",
+                        "hint": "Enter Numbers Only",
+                        "validation": "Valid entries are between 0 and 5000>"
+                    },
+                    "minimum": 0,
+                    "maximum": 5000,
+                    "_semanticType": "http://semantic-type.cms.amplience.com/number"
+                },
                 "pricingImage": {
                     "type": "object",
                     "allOf": [
@@ -224,7 +268,7 @@
                     "type": "boolean",
                     "_label": {
                         "value": "Banner Has JS Countdown",
-                        "hint": "checked = Countdown, unchecked = Static Text"
+                        "hint": "True / False"
                     },
                     "_semanticType": "http://semantic-type.cms.amplience.com/boolean"
                 },
@@ -232,7 +276,7 @@
                     "type": "string",
                     "_label": {
                         "value": "Enter Deadline",
-                        "hint": "Format Month Day Year hour:min:secs ie. Nov 6 2017 23:59:59",
+                        "hint": "Format: Nov 6 2017 23:59:59",
                         "validation": ""
                     },
                     "_semanticType": "http://semantic-type.cms.amplience.com/text"
@@ -240,7 +284,7 @@
                 "DaysBeforeEnd": {
                     "type": "number",
                     "_label": {
-                        "value": "Days before deadline, the countdown should start to display",
+                        "value": "Days before deadline, the countdown starts",
                         "hint": "Default: 6",
                         "validation": "field entry must be a number"
                     },
