@@ -296,12 +296,12 @@ h2.message1a.cdText, h2.message2a.cdText, h2.message3a.cdText, h2.message4a.cdTe
 }
 
 .carousel-control.left {
-  background-image: url(http://cdn-dfs2.amplience.com/dfs/carousel_nav_prev_no_dis_v2.png);
+  background-image: url(//images.dfs.co.uk/i/dfs/carousel_nav_prev_no_dis_v2);
   left: 0px;
 }
 
 .carousel-control.right {
-  background-image: url(http://cdn-dfs2.amplience.com/dfs/carousel_nav_next_no_dis_v2.png);
+  background-image: url(//images.dfs.co.uk/i/dfs/carousel_nav_next_no_dis_v2);
   left: 1306px;
 }
 

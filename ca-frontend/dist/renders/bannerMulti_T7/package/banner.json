@@ -1,0 +1,343 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "id": "http://schema.cms.amplience.com/{{self.id}}",
+    "meta": {
+        "name": "BannerIM",
+        "description": "",
+        "context": "http://context.cms.amplience.com/{{self.context.id}}",
+        "icons": [
+            {
+                "size": 256,
+                "url": "http://solutions.adis.ws.s3.amazonaws.com/ca/icons/bannericon.png"
+            }
+        ],
+        "card": [
+            {
+                "id": "defaultCard",
+                "category": "card",
+                "default": true,
+                "label": "Default card",
+                "uri": "//apps.dev-artifacts.adis.ws/cms-cards/master/latest/gallery/index.html",
+                "mapping": {
+                    "headline": "/title",
+                    "image0": "/image"
+                }
+            },
+            {
+                "id": "defaultviz",
+                "default": true,
+                "category": "visualization",
+                "label": "Default Visualization",
+                "uri": "https://paulbrowndfs.github.io/homePageCarousel/visualisation.html"
+            }
+        ]
+    },
+    "allOf": [
+        {
+            "$ref": "#/definitions/self"
+        },
+        {
+            "$ref": "http://schema.system.cms.amplience.com/v0.0#/content-base"
+        }
+    ],
+    "definitions": {
+        "self": {
+            "type": "object",
+            "properties": {
+                "image": {
+                    "type": "object",
+                    "allOf": [
+                        {
+                            "$ref": "http://schema.system.cms.amplience.com/v0.0#/di-asset-link"
+                        },
+                        {
+                            "properties": {
+                                "mediaType": {
+                                    "enum": [
+                                        "image"
+                                    ]
+                                }
+                            }
+                        }
+                    ],
+                    "_label": {
+                        "value": "Sidebar Background Image",
+                        "hint": ""
+                    },
+                    "_semanticType": "http://semantic-type.cms.amplience.com/asset"
+                },
+                "mobileSidebarImage": {
+                    "type": "object",
+                    "allOf": [
+                        {
+                            "$ref": "http://schema.system.cms.amplience.com/v0.0#/di-asset-link"
+                        },
+                        {
+                            "properties": {
+                                "mediaType": {
+                                    "enum": [
+                                        "image"
+                                    ]
+                                }
+                            }
+                        }
+                    ],
+                    "_label": {
+                        "value": "Sidebar Mobile Background Image",
+                        "hint": ""
+                    },
+                    "_semanticType": "http://semantic-type.cms.amplience.com/asset"
+                },
+                "sidebarCharacter": {
+                    "type": "object",
+                    "allOf": [
+                        {
+                            "$ref": "http://schema.system.cms.amplience.com/v0.0#/di-asset-link"
+                        },
+                        {
+                            "properties": {
+                                "mediaType": {
+                                    "enum": [
+                                        "image"
+                                    ]
+                                }
+                            }
+                        }
+                    ],
+                    "_label": {
+                        "value": "Sidebar Character",
+                        "hint": ""
+                    },
+                    "_semanticType": "http://semantic-type.cms.amplience.com/asset"
+                },
+                "desktopCharacterSize": {
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 255,
+                    "_label": {
+                        "value": "Desktop Character Size",
+                        "hint": "h=400 etc..",
+                        "validation": "max length 255 chars"
+                    },
+                    "_semanticType": "http://semantic-type.cms.amplience.com/text"
+                },
+                "desktopCharacterCrop": {
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 50,
+                    "_label": {
+                        "value": "Desktop Character Crop",
+                        "hint": "",
+                        "validation": ""
+                    },
+                    "_semanticType": "http://semantic-type.cms.amplience.com/text"
+                },
+                "mobileCharacterSize": {
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 255,
+                    "_label": {
+                        "value": "Mobile Character Size",
+                        "hint": "h=400 etc..",
+                        "validation": "max length 255 chars"
+                    },
+                    "_semanticType": "http://semantic-type.cms.amplience.com/text"
+                },
+                "mobileCharacterCrop": {
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 50,
+                    "_label": {
+                        "value": "Mobile Character Crop",
+                        "hint": "",
+                        "validation": ""
+                    },
+                    "_semanticType": "http://semantic-type.cms.amplience.com/text"
+                },
+                "productImage": {
+                    "type": "object",
+                    "allOf": [
+                        {
+                            "$ref": "http://schema.system.cms.amplience.com/v0.0#/di-asset-link"
+                        },
+                        {
+                            "properties": {
+                                "mediaType": {
+                                    "enum": [
+                                        "image"
+                                    ]
+                                }
+                            }
+                        }
+                    ],
+                    "_label": {
+                        "value": "Product Image",
+                        "hint": ""
+                    },
+                    "_semanticType": "http://semantic-type.cms.amplience.com/asset"
+                },
+                "messagea": {
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 50,
+                    "_label": {
+                        "value": "Message A",
+                        "hint": "Carousel Text A",
+                        "validation": "min chars 0, max 50 chars"
+                    },
+                    "_semanticType": "http://semantic-type.cms.amplience.com/text"
+                },
+                "messageb": {
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 50,
+                    "_label": {
+                        "value": "Message B",
+                        "hint": "Carousel Text B",
+                        "validation": "min chars 0, max 50 chars"
+                    },
+                    "_semanticType": "http://semantic-type.cms.amplience.com/text"
+                },
+                "messagec": {
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 50,
+                    "_label": {
+                        "value": "Message C",
+                        "hint": "Carousel Text C",
+                        "validation": "min chars 0, max 50 chars"
+                    },
+                    "_semanticType": "http://semantic-type.cms.amplience.com/text"
+                },
+                "textBottomPositionL": {
+                    "type": "number",
+                    "_label": {
+                        "value": "1366 Bottom px Text Position",
+                        "hint": "Enter Numbers Only",
+                        "validation": "Valid entries are between -1000 and 5000>"
+                    },
+                    "minimum": -1000,
+                    "maximum": 5000,
+                    "_semanticType": "http://semantic-type.cms.amplience.com/number"
+                },
+                "textLeftPositionL": {
+                    "type": "number",
+                    "_label": {
+                        "value": "1366 Left px",
+                        "hint": "Enter Numbers Only",
+                        "validation": "Valid entries are between -1000 and 5000>"
+                    },
+                    "minimum": -1000,
+                    "maximum": 5000,
+                    "_semanticType": "http://semantic-type.cms.amplience.com/number"
+                },
+                "textBottomPositionM": {
+                    "type": "number",
+                    "_label": {
+                        "value": "1024 Bottom px",
+                        "hint": "Enter Numbers Only",
+                        "validation": "Valid entries are between -1000 and 5000>"
+                    },
+                    "minimum": -1000,
+                    "maximum": 5000,
+                    "_semanticType": "http://semantic-type.cms.amplience.com/number"
+                },
+                "textLeftPositionM": {
+                    "type": "number",
+                    "_label": {
+                        "value": "1024 Left px",
+                        "hint": "Enter Numbers Only",
+                        "validation": "Valid entries are between -1000 and 5000>"
+                    },
+                    "minimum": -1000,
+                    "maximum": 5000,
+                    "_semanticType": "http://semantic-type.cms.amplience.com/number"
+                },
+                "textBottomPositionS": {
+                    "type": "number",
+                    "_label": {
+                        "value": "Mobile Bottom px",
+                        "hint": "Enter Numbers Only",
+                        "validation": "Valid entries are between -1000 and 5000>"
+                    },
+                    "minimum": -1000,
+                    "maximum": 5000,
+                    "_semanticType": "http://semantic-type.cms.amplience.com/number"
+                },
+                "textLeftPositionS": {
+                    "type": "number",
+                    "_label": {
+                        "value": "Mobile Left px",
+                        "hint": "Enter Numbers Only",
+                        "validation": "Valid entries are between -1000 and 5000>"
+                    },
+                    "minimum": -1000,
+                    "maximum": 5000,
+                    "_semanticType": "http://semantic-type.cms.amplience.com/number"
+                },
+                "pricingImage": {
+                    "type": "object",
+                    "allOf": [
+                        {
+                            "$ref": "http://schema.system.cms.amplience.com/v0.0#/di-asset-link"
+                        },
+                        {
+                            "properties": {
+                                "mediaType": {
+                                    "enum": [
+                                        "image"
+                                    ]
+                                }
+                            }
+                        }
+                    ],
+                    "_label": {
+                        "value": "Pricing Image",
+                        "hint": ""
+                    },
+                    "_semanticType": "http://semantic-type.cms.amplience.com/asset"
+                },
+                "productURL": {
+                    "type": "string",
+                    "minLength": 3,
+                    "maxLength": 256,
+                    "_label": {
+                        "value": "Product URL Link",
+                        "hint": "relative path from domain, starts with / ie. /hanson/hns23asms",
+                        "validation": "URL must start with a / and must be 3 to 256 characters in length"
+                    },
+                    "_semanticType": "http://semantic-type.cms.amplience.com/text"
+                },
+                "hasCountdown": {
+                    "type": "boolean",
+                    "_label": {
+                        "value": "Banner Has JS Countdown",
+                        "hint": "True / False"
+                    },
+                    "_semanticType": "http://semantic-type.cms.amplience.com/boolean"
+                },
+                "countdownDeadline": {
+                    "type": "string",
+                    "_label": {
+                        "value": "Enter Deadline",
+                        "hint": "Format: Nov 6 2017 23:59:59",
+                        "validation": ""
+                    },
+                    "_semanticType": "http://semantic-type.cms.amplience.com/text"
+                },
+                "DaysBeforeEnd": {
+                    "type": "number",
+                    "_label": {
+                        "value": "Days before deadline, the countdown starts",
+                        "hint": "Default: 6",
+                        "validation": "field entry must be a number"
+                    },
+                    "minimum": 1,
+                    "maximum": 99,
+                    "_semanticType": "http://semantic-type.cms.amplience.com/number"
+                }
+            },
+            "required": []
+        }
+    }
+}
