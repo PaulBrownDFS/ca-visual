@@ -185,15 +185,16 @@
 
 .carousel-indicators li {
   display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin: 1px;
+  width: 15px;
+  height: 15px;
+  margin: 1px 5px 1px 5px;
   text-indent: -999px;
   cursor: pointer;
   background-color: #000 \9;
   background-color: transparent;
-  border: 1px solid #fff;
   border-radius: 10px;
+  -webkit-box-shadow: inset 1px 1px 1px #222;
+  box-shadow: inset 1px 1px 1px #222;
 }
 
 .carousel-indicators .active {
@@ -254,10 +255,13 @@
 h2.message1b.cdText, h2.message2b.cdText, h2.message3b.cdText, h2.message4b.cdText, h2.message5b.cdText {
   font-size: 16px;
   margin: 0;
+  position: relative;
+  top: -12px;
 }
 
 h2.message1a.cdText, h2.message2a.cdText, h2.message3a.cdText, h2.message4a.cdText, h2.message5a.cdText {
-  padding-top: 12px;
+  position: relative;
+  top: -8px;
 }
 
 .carousel-inner .item a {
@@ -292,12 +296,12 @@ h2.message1a.cdText, h2.message2a.cdText, h2.message3a.cdText, h2.message4a.cdTe
 }
 
 .carousel-control.left {
-  background-image: url(http://cdn-dfs2.amplience.com/dfs/carousel_nav_prev_no_dis_v2.png);
+  background-image: url(//images.dfs.co.uk/i/dfs/carousel_nav_prev_no_dis_v2);
   left: 0px;
 }
 
 .carousel-control.right {
-  background-image: url(http://cdn-dfs2.amplience.com/dfs/carousel_nav_next_no_dis_v2.png);
+  background-image: url(//images.dfs.co.uk/i/dfs/carousel_nav_next_no_dis_v2);
   left: 1306px;
 }
 
@@ -311,23 +315,21 @@ h2.message1a.cdText, h2.message2a.cdText, h2.message3a.cdText, h2.message4a.cdTe
 }
 
 .carousel-indicators .active {
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
   margin: 0;
-  background-color: #fff;
+  background-color: #5c2d91;
 }
 
 .carousel-indicators li {
-  width: 8px;
-  height: 8px;
-  border: 2px solid #5c2c91;
-  background-color: #5c2c91;
+  width: 15px;
+  height: 15px;
+  background-color: #FFF;
   border-radius: 10px;
 }
 
 .carousel-indicators li:not(.active):hover {
-  background-color: #fff;
-  border: 3px solid #fff;
+  background-color: #000;
 }
 
 @media (max-width: 1365px) {
@@ -360,10 +362,12 @@ h2.message1a.cdText, h2.message2a.cdText, h2.message3a.cdText, h2.message4a.cdTe
   }
   h2.message1b.cdText, h2.message2b.cdText, h2.message3b.cdText, h2.message4b.cdText, h2.message5b.cdText {
     font-size: 13px !important;
-    margin: 0;
+    position: relative;
+    top: -8px;
   }
   h2.message1a.cdText, h2.message2a.cdText, h2.message3a.cdText, h2.message4a.cdText, h2.message5a.cdText {
-    padding-top: 8px;
+    position: relative;
+    top: -5px;
   }
 }
 
@@ -418,33 +422,29 @@ h2.message1a.cdText, h2.message2a.cdText, h2.message3a.cdText, h2.message4a.cdTe
     background-position: 0px -104px;
   }
   .carousel-indicators .active {
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     margin: 0;
-    background-color: #fff;
+    background-color: #5c2d91;
   }
   .carousel-indicators li {
-    width: 8px;
-    height: 8px;
-    border: 2px solid #5c2c91;
-    background-color: #5c2c91;
+    width: 15px;
+    height: 15px;
+    background-color: #FFF;
     border-radius: 10px;
   }
   .carousel-indicators li:not(.active):hover {
-    background-color: #fff;
-    border: 3px solid #fff;
+    background-color: #222;
   }
   h2.message1b.cdText, h2.message2b.cdText, h2.message3b.cdText, h2.message4b.cdText, h2.message5b.cdText {
     font-size: 15px;
-    position: relative;
-    top: -5px;
+    top: -8px;
   }
   h2.message1a.cdText, h2.message2a.cdText, h2.message3a.cdText, h2.message4a.cdText, h2.message5a.cdText {
-    margin: 0 0 5px;
+    top: -5px;
   }
   p.message1c, p.message2c, p.message3c, p.message4c, p.message5c {
     font-size: 12px;
-    position: relative;
     top: 0px;
   }
 }
