@@ -465,15 +465,9 @@ dfs.carouselText = function(target, text){
 }
 
 function updateElement(){
-  var test4Element = $('#myCarousel');
+  var test4Element = $('#hpCarousel');
     if(test4Element.length) {
-          $('#myCarousel').carousel({ interval: 6000, cycle: true });
-          $("#myCarousel").swiperight(function() {
-              $(this).carousel('prev');
-          });
-          $("#myCarousel").swipeleft(function() {
-              $(this).carousel('next');
-          });
+          $('#hpCarousel').carousel({ interval: 6000, cycle: true });
         clearInterval(PollElement);
         console.log('Carousel Ready and Initiated : ' + PollElement);
         dfs.carCountdown.init();
