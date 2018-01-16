@@ -424,7 +424,7 @@ h2.message1a.cdText, h2.message2a.cdText, h2.message3a.cdText, h2.message4a.cdTe
   .carousel-indicators .active {
     width: 15px;
     height: 15px;
-    margin: 0;
+    margin: 0 10px;
     background-color: #5c2d91;
   }
   .carousel-indicators li {
@@ -432,6 +432,7 @@ h2.message1a.cdText, h2.message2a.cdText, h2.message3a.cdText, h2.message4a.cdTe
     height: 15px;
     background-color: #FFF;
     border-radius: 10px;
+    margin: 1px 10px 0px;
   }
   .carousel-indicators li:not(.active):hover {
     background-color: #222;
