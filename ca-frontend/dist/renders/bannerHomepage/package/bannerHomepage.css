@@ -246,22 +246,21 @@
 .carousel-inner .item h2 {
   font-family: sans-serif;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 20px;
+  font-size: 16px;
+  line-height: 16px;
   margin: 2px;
-  color: #000;
 }
 
 h2.message1b.cdText, h2.message2b.cdText, h2.message3b.cdText, h2.message4b.cdText, h2.message5b.cdText {
   font-size: 16px;
   margin: 0;
   position: relative;
-  top: -12px;
+  top: 0;
 }
 
 h2.message1a.cdText, h2.message2a.cdText, h2.message3a.cdText, h2.message4a.cdText, h2.message5a.cdText {
   position: relative;
-  top: -8px;
+  top: 0;
 }
 
 .carousel-inner .item a {
@@ -361,13 +360,12 @@ h2.message1a.cdText, h2.message2a.cdText, h2.message3a.cdText, h2.message4a.cdTe
     line-height: 12px;
   }
   h2.message1b.cdText, h2.message2b.cdText, h2.message3b.cdText, h2.message4b.cdText, h2.message5b.cdText {
-    font-size: 13px !important;
     position: relative;
-    top: -8px;
+    top: 0px;
   }
   h2.message1a.cdText, h2.message2a.cdText, h2.message3a.cdText, h2.message4a.cdText, h2.message5a.cdText {
     position: relative;
-    top: -5px;
+    top: 0;
   }
 }
 
@@ -376,10 +374,7 @@ h2.message1a.cdText, h2.message2a.cdText, h2.message3a.cdText, h2.message4a.cdTe
   .carousel-inner .item h2 {
     font-family: sans-serif;
     font-weight: 700;
-    font-size: 18px;
-    line-height: 17px;
     margin: 2px;
-    color: #000;
   }
   .carousel-inner .item a {
     color: #000;
@@ -438,14 +433,15 @@ h2.message1a.cdText, h2.message2a.cdText, h2.message3a.cdText, h2.message4a.cdTe
     background-color: #222;
   }
   h2.message1b.cdText, h2.message2b.cdText, h2.message3b.cdText, h2.message4b.cdText, h2.message5b.cdText {
-    font-size: 15px;
-    top: -8px;
+    top: 0;
   }
   h2.message1a.cdText, h2.message2a.cdText, h2.message3a.cdText, h2.message4a.cdText, h2.message5a.cdText {
-    top: -5px;
+    top: 0;
   }
   p.message1c, p.message2c, p.message3c, p.message4c, p.message5c {
-    font-size: 12px;
-    top: 0px;
+    top: 0;
+  }
+  p.message1d, p.message2d, p.message3d, p.message4d, p.message5d {
+    top: 0;
   }
 }
