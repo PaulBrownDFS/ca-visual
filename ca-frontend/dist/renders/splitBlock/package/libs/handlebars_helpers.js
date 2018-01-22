@@ -145,6 +145,21 @@ if (typeof Handlebars !== 'undefined') {
         return new Handlebars.SafeString(dataElement);
     });
 
+    // Additional Handlbars Helpers
+
+    Handlebars.registerHelper("math", function(lvalue, operator, rvalue, options) {
+        lvalue = parseFloat(lvalue);
+        rvalue = parseFloat(rvalue);
+
+        return {
+            "+": lvalue + rvalue,
+            "-": lvalue - rvalue,
+            "*": lvalue * rvalue,
+            "/": lvalue / rvalue,
+            "%": lvalue % rvalue
+        }[operator];
+    });
+
     Handlebars.registerHelper('times', function(n, block) {
     var accum = '';
     for(var i = 0; i < n; ++i) {

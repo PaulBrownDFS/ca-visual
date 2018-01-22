@@ -148,10 +148,10 @@ dfs.carouselText = function(target, text){
       }
     }
 
-  dfs.checkTextData = function(varience, mID){
-    var v1 = varience.replace(/,\s+/g, ',').split(',');
+  dfs.checkTextData = function(variance, mID){
+    var v1 = variance.replace(/,\s+/g, ',').split(',');
       if(v1.length !== 6) {
-        console.log('VarianceID: ' + mID + ' Invalid Csv Data length, Skipping This Event!');
+        console.log('slide: ' + mID + ' Invalid Csv Data length, Skipping This Event! ('+ variance+ ')');
         return false;
       }
     var moment = new Date(), startDate = v1[0].split('/'), endDate = v1[1].split('/');
@@ -187,7 +187,8 @@ dfs.carouselText = function(target, text){
 dfs.updateElement = function(){
   var test4Element = $('#myCarousel');
     if(test4Element.length) {
-          $('#myCarousel').carousel({ interval: 6000, cycle: true });
+          $('#myCarousel').carousel({ interval: 6000});
+          $('#myCarousel').carousel('pause');
         clearInterval(PollElement);
         console.log('Carousel Ready and Initiated : ' + PollElement);
         dfs.carCountdown.init();
@@ -197,7 +198,6 @@ dfs.updateElement = function(){
 
 // start carousel if loaded..
 var PollElement = setInterval(dfs.updateElement, 500);
-
 
 </script>
 
