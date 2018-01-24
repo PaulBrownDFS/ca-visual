@@ -4,10 +4,21 @@
 var slideData = {};
     slideData.slides = [],
     slideData.spec ={},
+      getVisualId = function(name, url) {
+      if (!url) url = window.location.href;
+      name = name.replace(/[\[\]]/g, "\\$&");
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
     slideIDs=[];
     var cacheBuster = Math.random().toString(36).substr(2, 12);
+    var visualID = getVisualId('visualId');
 
-    slideGroupId = '1e4c2dda-484b-498d-b4a5-0d7e38702162'
+    slideGroupId = visualID ? visualID : '1e4c2dda-484b-498d-b4a5-0d7e38702162';
+    console.log(slideGroupId);
 
     var masterDeliveryUrl = '//c1.adis.ws/cms/content/query?fullBodyObject=true&query=%7B"sys.iri"%3A"http%3A%2F%2Fcontent.cms.amplience.com%2F'+ slideGroupId +'"%7D&scope=tree&store=dfs&cacheBuster=' + cacheBuster;
 

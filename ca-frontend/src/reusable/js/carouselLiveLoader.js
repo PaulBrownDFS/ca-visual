@@ -7,7 +7,11 @@ var slideData = {};
     slideIDs=[];
     var cacheBuster = Math.random().toString(36).substr(2, 12);
 
-    slideGroupId = '1e4c2dda-484b-498d-b4a5-0d7e38702162'
+    var visualID = $('.js_banner_wrap').data('visualid');
+    var isROI = $('.js_banner_wrap').data('roi');
+
+    slideGroupId = visualID ? visualID : '1e4c2dda-484b-498d-b4a5-0d7e38702162';
+    console.info('Carousel ID:', slideGroupId);
 
     var masterDeliveryUrl = '//c1.adis.ws/cms/content/query?fullBodyObject=true&query=%7B"sys.iri"%3A"http%3A%2F%2Fcontent.cms.amplience.com%2F'+ slideGroupId +'"%7D&scope=tree&store=dfs&cacheBuster=' + cacheBuster;
 
@@ -28,7 +32,7 @@ var slideData = {};
                     masterIDs.Carousel_slide4,
                     masterIDs.Carousel_slide5,
                     ];
-        slideData.spec = {"roiPrices": masterIDs.roi, "testDate" : masterIDs.testDate};
+        slideData.spec = {"roiPrices": isROI, "testDate" : masterIDs.testDate};
 
 
       })
@@ -75,7 +79,7 @@ var contentTree = amp.inlineContent(data)[0];
 
 function renderCarousel() {
   var template = Handlebars.template(AmpCa.templates.bannerMulti);
-  console.log(slideData);
+  console.log(slideData.spec);
   document.querySelectorAll(".js_banner_wrap")[0].innerHTML = template(slideData);
 }
 
