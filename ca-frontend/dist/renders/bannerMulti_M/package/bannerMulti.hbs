@@ -80,25 +80,25 @@
   }
   h2.message{{inc @index}}a {
     color:#{{textAColour}};
-    font-size:{{textAFontSize}}px !important;
-    line-height:{{textAFontSize}}px !important;
+    font-size:{{#if textAFontSize}}{{math textAFontSize "-" 4}}{{else}}14{{/if}}px !important;
+    line-height:{{#if textAFontSize}}{{math textAFontSize "-" 4}}{{else}}14{{/if}}px !important;
   }
   h2.message{{inc @index}}b {
     color:#{{textBColour}};
-    font-size:{{textBFontSize}}px !important;
-    line-height:{{textBFontSize}}px !important;
+    font-size:{{#if textBFontSize}}{{math textBFontSize "-" 4}}{{else}}14{{/if}}px !important;
+    line-height:{{#if textBFontSize}}{{math textBFontSize "-" 4}}{{else}}14{{/if}}px !important;
   }
   p.message{{inc @index}}c {
     color:#{{textCColour}};
-    font-size:{{textCFontSize}}px !important;
-    line-height:{{textCFontSize}}px !important;
+    font-size:{{#if textCFontSize}}{{math textCFontSize "-" 4}}{{else}}12{{/if}}px !important;
+    line-height:{{#if textCFontSize}}{{math textCFontSize "-" 4}}{{else}}12{{/if}}px !important;
     margin-top:5px;
     display:none;
   }
   p.message{{inc @index}}d {
     color:#{{textDColour}};
-    font-size:{{textDFontSize}}px !important;
-    line-height:{{textDFontSize}}px !important;
+    font-size:{{#if textAFontSize}}{{math textAFontSize "-" 4}}{{else}}12{{/if}}px !important;
+    line-height:{{#if textAFontSize}}{{math textAFontSize "-" 4}}{{else}}12{{/if}}px !important;
     display:none;
   }
 
