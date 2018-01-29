@@ -221,6 +221,10 @@
 
 /* END BOOTSTRAP Carousel 3.3.7 CSS */
 
+.js_banner_wrap .item {
+    height: 619px;
+}
+
 .carousel-inner .item h2 {
     font-family: sans-serif;
     font-weight: 700;
@@ -296,6 +300,10 @@ h2.message1a.cdText,h2.message2a.cdText,h2.message3a.cdText,h2.message4a.cdText,
 }
 
 @media (max-width: 1365px) {
+
+  .js_banner_wrap .item {
+      height: 465px;
+  }
   .carouselContainer {
       width: 1024px;
   }
