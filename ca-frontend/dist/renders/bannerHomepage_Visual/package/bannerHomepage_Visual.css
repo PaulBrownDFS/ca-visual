@@ -378,6 +378,9 @@ h2.message1a.cdText, h2.message2a.cdText, h2.message3a.cdText, h2.message4a.cdTe
 
 @media (max-width: 1023px) {
   /* Mobile Css Styles*/
+  .js_banner_wrap .item {
+    height: 462px;
+  }
   .carousel-inner .item h2 {
     font-family: sans-serif;
     font-weight: 700;
