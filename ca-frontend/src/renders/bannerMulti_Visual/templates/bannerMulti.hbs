@@ -79,6 +79,10 @@
     display: table-cell;
     vertical-align: middle;
   }
+  .bannerTextWrapper h2.cdText span {
+    margin: 0 1px;
+    font-size: 15px !important;
+  }
   {{#each slides}}
   .bannerTextContainer[data-messageid="slide_{{inc @index}}"] {
     bottom: {{textBottomPositionL}}px;
@@ -108,6 +112,11 @@
     margin:0;
   }
   @media (max-width: 1365px) {
+
+    .bannerTextWrapper h2.cdText span {
+      margin: 0 1px;
+      font-size: 15px !important;
+    }
     .bannerTextContainer[data-messageid="slide_{{inc @index}}"] {
       bottom: {{textBottomPositionM}}px;
       left:{{textLeftPositionM}}px;

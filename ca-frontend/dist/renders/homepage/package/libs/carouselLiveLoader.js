@@ -11,7 +11,7 @@ var slideData = {};
     var isROI = $('.js_banner_wrap').data('roi');
 
     slideGroupId = visualID ? visualID : '1e4c2dda-484b-498d-b4a5-0d7e38702162';
-    console.info('Carousel ID:', slideGroupId);
+    //console.info('Carousel ID:', slideGroupId);
 
     var masterDeliveryUrl = '//c1.adis.ws/cms/content/query?fullBodyObject=true&query=%7B"sys.iri"%3A"http%3A%2F%2Fcontent.cms.amplience.com%2F'+ slideGroupId +'"%7D&scope=tree&store=dfs&cacheBuster=' + cacheBuster;
 
@@ -96,7 +96,7 @@ if(!dfs) {
 }
 dfs.carouselText = function(target, text){
   var el = $('.' + target);
-  el.text(text);
+  el.html(text);
   if(el.length){
     return '.' + target + ' updated to ' + text;
   } else {
@@ -166,7 +166,7 @@ dfs.carouselText = function(target, text){
                       var line1 = "ENDS TODAY";
                     }
 
-                    var line2 = countDownOBj.hours + " Hrs " + countDownOBj.minutes + " Mins " + countDownOBj.seconds + " Secs",
+                    var line2 = countDownOBj.hours + "<span>hrs </span>" + countDownOBj.minutes + "<span>mins </span>" + countDownOBj.seconds + "<span>secs </span>",
                     line3 = countDownOBj.days === 0 ? messageC : "";
                     line4 = countDownOBj.days === 0 ? messageD : "";
 
@@ -178,7 +178,7 @@ dfs.carouselText = function(target, text){
 
               }, 1000);
             } else {
-              console.log('show Static text for slide ' + messageID);
+              //console.log('show Static text for slide ' + messageID);
             }
         });
       }
@@ -187,7 +187,7 @@ dfs.carouselText = function(target, text){
   dfs.checkTextData = function(variance, mID, td){
     var v1 = variance.replace(/,\s+/g, ',').split(',');
       if(v1.length !== 6) {
-        console.log('slide: ' + mID + ' Invalid Csv Data length, Skipping This Event! ('+ variance+ ')');
+        //console.log('slide: ' + mID + ' Invalid Csv Data length, Skipping This Event! ('+ variance+ ')');
         return false;
       }
       if(td){

@@ -73,6 +73,10 @@
     display: table-cell;
     vertical-align: middle;
   }
+  .bannerTextWrapper h2.cdText span {
+    margin: 0 1px;
+    font-size: 15px !important;
+  }
   {{#each slides}}
   .bannerTextContainer[data-messageid="slide_{{inc @index}}"] {
     bottom: {{textBottomPositionL}}px;
@@ -108,13 +112,13 @@
     }
     h2.message{{inc @index}}a {
       color:#{{#if textAColour}}{{textAColour}}{{else}}000000{{/if}} !important;
-      font-size:{{#if textAFontSize}}{{math textAFontSize "-" 2}}{{else}}14{{/if}}px !important;
-      line-height:{{#if textAFontSize}}{{math textAFontSize "-" 2}}{{else}}14{{/if}}px !important;
+      font-size:{{#if textAFontSize}}{{math textAFontSize "-" 4}}{{else}}14{{/if}}px !important;
+      line-height:{{#if textAFontSize}}{{math textAFontSize "-" 4}}{{else}}14{{/if}}px !important;
     }
     h2.message{{inc @index}}b {
       color:#{{#if textBColour}}{{textBColour}}{{else}}000000{{/if}} !important;
-      font-size:{{#if textBFontSize}}{{math textBFontSize "-" 2}}{{else}}14{{/if}}px !important;
-      line-height:{{#if textBFontSize}}{{math textBFontSize "-" 2}}{{else}}14{{/if}}px !important;
+      font-size:{{#if textBFontSize}}{{math textBFontSize "-" 4}}{{else}}14{{/if}}px !important;
+      line-height:{{#if textBFontSize}}{{math textBFontSize "-" 4}}{{else}}14{{/if}}px !important;
     }
     p.message{{inc @index}}c {
       color:#{{#if textCColour}}{{textCColour}}{{else}}000000{{/if}} !important;
@@ -130,4 +134,10 @@
   }
 
   {{/each}}
+@media (max-width: 1365px) {
+  .bannerTextWrapper h2.cdText span {
+    margin: 0 1px;
+    font-size: 12px !important;
+  }
+}
   </style>

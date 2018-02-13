@@ -29,6 +29,7 @@
 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 
 <script src="../../reusable/v_carousel.js"></script>
+<script src="../../reusable/x2Json.min.js"></script>
 
 
 <!-- This is a compiled template-->
@@ -45,6 +46,7 @@
             store: 'dfs'
         },
         callback: function (data) {
+          // console.log(data[0]);
             var template = Handlebars.template(AmpCa.templates.bannerHomepage);
             document.querySelectorAll(".js_banner_wrap")[0].innerHTML = template(data[0]);
         },
@@ -82,6 +84,7 @@ dfs.carouselText = function(target, text){
           }
       },
         addCountDown: function(){
+          productsData = [];
           $('.bannerTextContainer.carCountdown').each(function() {
             var _this = this,
             data = $(_this).data(),
@@ -93,10 +96,42 @@ dfs.carouselText = function(target, text){
             textVariance2 = data.tv2,
             textVariance3 = data.tv3,
             textVariance4 = data.tv4,
+            productSKU = data.sku,
             messageID = data.messageid.replace('slide_','');
             // console.log(deadline + ' , ' + daysStart + ' , ' + messageID) ;
             // console.log(textVariance1,textVariance2,textVariance3,textVariance4);
             var countDownOBj = dfs.getTimeRemaining(deadline);
+
+            //Product sku
+            console.log('Product SKU:',productSKU);
+            if(productSKU) {
+              // DO Ajax Lookup
+              var template = 'http://www.dfs.co.uk/webapp/wcs/stores/servlet/GetAmplienceProductDataCmd?sku=' + productSKU;
+              ajaxRequest = $.ajax({
+                url: template,
+                type: "get",
+                async: false,
+                dataType: 'text'
+            }).done(function (response, textStatus, jqXHR){
+
+              //clean up xml (remove invalid &pounds;)
+              var cleanXML = response.replace(/&amp;pound;/g,'&#163;');
+              //var XMLdoc = $.parseXML( cleanXML ); // convert back to XML
+              //$xml = $( XMLdoc );
+              console.log(response);
+
+              var x2js = new X2JS();
+                productsData.push( x2js.xml_str2json( cleanXML ) );
+
+              // console.log('XML', $xml);
+
+            }).fail(function (textStatus){
+               // show error
+               console.log(textStatus.statusText);
+               console.log('Failed to load XML Document');
+
+       });
+            }
 
             // Check if this Slide needs a text Update
 

@@ -10,7 +10,7 @@ var slideData = {};
     slideIDs=[];
     var cacheBuster = Math.random().toString(36).substr(2, 12);
 
-    slideGroupId = visualID ? visualID : '1e4c2dda-484b-498d-b4a5-0d7e38702162';
+    slideGroupId = visualID ? visualID : '6b90388f-554a-4651-ae89-a79576867a3f';
     console.log(slideGroupId);
 
     var masterDeliveryUrl = '//c1.adis.ws/cms/content/query?fullBodyObject=true&query=%7B"sys.iri"%3A"http%3A%2F%2Fcontent.cms.amplience.com%2F'+ slideGroupId +'"%7D&scope=tree&store=dfs&cacheBuster=' + cacheBuster;
@@ -96,7 +96,7 @@ if(!dfs) {
 }
 dfs.carouselText = function(target, text){
   var el = $('.' + target);
-  el.text(text);
+  el.html(text);
   if(el.length){
     return '.' + target + ' updated to ' + text;
   } else {
@@ -166,7 +166,7 @@ dfs.carouselText = function(target, text){
                       var line1 = "ENDS TODAY";
                     }
 
-                    var line2 = countDownOBj.hours + " Hrs " + countDownOBj.minutes + " Mins " + countDownOBj.seconds + " Secs",
+                    var line2 = countDownOBj.hours + "<span>hrs </span>" + countDownOBj.minutes + "<span>mins </span>" + countDownOBj.seconds + "<span>secs </span>",
                     line3 = countDownOBj.days === 0 ? messageC : "";
                     line4 = countDownOBj.days === 0 ? messageD : "";
 
