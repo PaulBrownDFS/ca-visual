@@ -60,14 +60,46 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-  </div>
+    {{#if productData}}
+      <div class="productDetails">
+        <h4>Live Product Data: >></h4>
+        <h4>SKU: <span>{{productData.sku}}</span></h4>
+        <h4>Range Name: <span>{{productData.reviews.text}}</span></h4>
+        <h4>Name: <span>{{productData.name}}</span></h4>
+        <h4>Live Price: <span>{{{productData.price2}}}</span></h4>
+        <h4>Finance: <span>{{{finance productData.price2 "UK"}}}</span></h4>
+        <h4>Price Label2: <span>{{{productData.pricelabel2}}}</span></h4>
+        <h4>saving label &amp; value: <span>{{productData.savinglabel}} {{{productData.savingvalue}}}</span></h4>
+        <h4>Was: <span>{{{productData.wasprice}}}</span></h4>
+      </div>
+    {{/if}}
   <style>
+  .productDetails {
+    font-family: "HelveticaNeueW01-75Bold", Arial, sans-serif;
+    font-size: 14px;
+    color: #6e14bb;
+    margin-top:5px;
+    margin-bottom:40px;
+  }
+  .productDetails span {
+    font-family: "HelveticaNeueW01-Thin", Arial, sans-serif;
+    font-size: 14px;
+    color:#444;
+  }
+  .productDetails h4 {
+    display: inline-block;
+    margin: 5px 8px;
+  }
   .bannerTextContainer.carCountdown {
     display: table;
   }
   .bannerTextWrapper{
     display: table-cell;
     vertical-align: middle;
+  }
+  .bannerTextWrapper h2.cdText span {
+    margin: 0 1px;
+    font-size: 15px !important;
   }
   {{#times 5}}
   .bannerTextContainer[data-messageid="slide_{{inc @index}}"] {
@@ -154,4 +186,10 @@
     }
   }
   {{/times}}
+  @media (max-width: 1365px) {
+    .bannerTextWrapper h2.cdText span {
+      margin: 0 1px;
+      font-size: 12px !important;
+    }
+  }
   </style>

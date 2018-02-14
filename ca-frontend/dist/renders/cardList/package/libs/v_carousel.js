@@ -328,3 +328,13 @@ Handlebars.registerHelper("math", function(lvalue, operator, rvalue, options) {
         "%": lvalue % rvalue
     }[operator];
 });
+
+Handlebars.registerHelper("finance", function(price, local) {
+  var this_price = price.match(/([1-9])+/g);
+  if(local === 'UK') {
+    return '&pound;' + Math.floor(parseFloat((this_price[0]) / 48) * 100) / 100 + ' a month for 4 years';
+  } else {
+    return '&euro;' + Math.floor(parseFloat((this_price[0]) / 36) * 100) / 100 + ' a month for 3 years';
+  }
+
+});
