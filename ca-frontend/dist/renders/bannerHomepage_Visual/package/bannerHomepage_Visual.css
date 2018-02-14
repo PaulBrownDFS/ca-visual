@@ -256,7 +256,7 @@
 }
 
 h2.message1b.cdText, h2.message2b.cdText, h2.message3b.cdText, h2.message4b.cdText, h2.message5b.cdText {
-  font-size: 16px;
+  font-size: 16px !important;
   margin: 0;
   position: relative;
   top: 0;
