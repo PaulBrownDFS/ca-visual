@@ -42,13 +42,16 @@
     AmpCa.utils.getCaData({
         auth: {
             baseUrl: 'https://c1.adis.ws',
-            id: 'eebfb6e7-b102-469a-8e85-010189a4d42c',
+            id: '560dccba-7231-4ee9-9524-0c176583719c',
             store: 'dfs'
         },
         callback: function (data) {
           var productSKU = data[0].productSku;
-          data[0].productData = dfs.getXmlData(productSKU);
-          console.log('!!!!!****', data[0]);
+          if(productSKU){
+            data[0].productData = dfs.getXmlData(productSKU);
+            console.log('!!!!!****', data[0]);
+          }
+
             var template = Handlebars.template(AmpCa.templates.bannerHomepage);
             document.querySelectorAll(".js_banner_wrap")[0].innerHTML = template(data[0]);
         },
