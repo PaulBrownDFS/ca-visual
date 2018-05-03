@@ -291,7 +291,7 @@ h2.message1a.cdText, h2.message2a.cdText, h2.message3a.cdText, h2.message4a.cdTe
   background-position: 0px 0px;
   cursor: pointer;
   top: 257.5px;
-  z-index: 9999;
+  z-index: 99;
 }
 
 .carousel-control.left {

@@ -42,14 +42,14 @@
     AmpCa.utils.getCaData({
         auth: {
             baseUrl: 'https://c1.adis.ws',
-            id: 'f987aea7-d7b0-4958-9bad-0a36aa8ee4a9',
+            id: '7e75b16e-12e2-4f64-bd48-a1a7a5bdf540',
             store: 'dfs'
         },
         callback: function (data) {
           var productSKU = data[0].productSku;
           if(productSKU){
             data[0].productData = dfs.getXmlData(productSKU);
-            console.log('!!!!!****', data[0]);
+            // console.log('!!!!!****', data[0]);
           }
 
             var template = Handlebars.template(AmpCa.templates.bannerHomepage);
@@ -134,11 +134,18 @@ dfs.carouselText = function(target, text){
                     }
                     if(countDownOBj.days > 0) {
                       var line1 = "FINAL " + countDownOBj.days + " " + dayOrDays;
+                      var ampersand = true;
                     } else {
                       var line1 = "ENDS TODAY";
+                      var ampersand = false;
                     }
 
-                    var line2 = countDownOBj.hours + "<span>hrs </span>" + countDownOBj.minutes + "<span>mins </span>" + countDownOBj.seconds + "<span>secs </span>",
+                    if(ampersand) {
+                      var line2 = "& ";
+                    } else {
+                      var line2 = "";
+                    }
+                    line2 += countDownOBj.hours + "<span>hrs </span>" + countDownOBj.minutes + "<span>mins </span>" + countDownOBj.seconds + "<span>secs </span>",
                     line3 = countDownOBj.days === 0 ? messageC : "";
                     line4 = countDownOBj.days === 0 ? messageD : "";
 
@@ -198,7 +205,7 @@ dfs.getXmlData = function(productSKU) {
   productsData = [];
   if(productSKU) {
     // DO Ajax Lookup
-    var template = 'http://www.dfs.co.uk/webapp/wcs/stores/servlet/GetAmplienceProductDataCmd?sku=' + productSKU;
+    var template = 'https://www.dfs.co.uk/webapp/wcs/stores/servlet/GetAmplienceProductDataCmd?sku=' + productSKU;
     ajaxRequest = $.ajax({
       url: template,
       type: "get",

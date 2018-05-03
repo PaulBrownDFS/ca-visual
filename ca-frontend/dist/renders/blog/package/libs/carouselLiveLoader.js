@@ -1,5 +1,5 @@
 // ===========================================
-//  Carousel  Builder v1.0 PB
+//  Carousel  Builder v1.0 PB MAY 2nd 2018
 // ===========================================
 var slideData = {};
     slideData.slides = [],
@@ -190,11 +190,15 @@ dfs.carouselText = function(target, text){
         //console.log('slide: ' + mID + ' Invalid Csv Data length, Skipping This Event! ('+ variance+ ')');
         return false;
       }
-      if(td){
-        var moment = new Date(td);
-      } else {
-        var moment = new Date();
-      }
+
+      // disable test date for live sites by commenting out the next 5 lines
+
+      // if(td){
+      //   var moment = new Date(td);
+      // } else {
+      //   var moment = new Date();
+      // }
+      var moment = new Date();
 
 
       var startDate = v1[0].split('/'), endDate = v1[1].split('/');
@@ -213,17 +217,20 @@ dfs.carouselText = function(target, text){
     }
 
   dfs.getTimeRemaining = function(endtime, testDate){
-    if(testDate){
-      var current_time = new Date(),
-        hrs = current_time.getHours(),
-        mins = current_time.getMinutes(),
-        secs = current_time.getSeconds();
-        testDate += ' ' + hrs + ':' + mins + ':' + secs;
+    // disable test date
+    // if(testDate) {
+    //   var current_time = new Date(),
+    //     hrs = current_time.getHours(),
+    //     mins = current_time.getMinutes(),
+    //     secs = current_time.getSeconds();
+    //     testDate += ' ' + hrs + ':' + mins + ':' + secs;
+    //
+    //   var t = Date.parse(endtime) - Date.parse(new Date(testDate));
+    // } else {
+    //   var t = Date.parse(endtime) - Date.parse(new Date());
+    // }
 
-      var t = Date.parse(endtime) - Date.parse(new Date(testDate));
-    } else {
-      var t = Date.parse(endtime) - Date.parse(new Date());
-    }
+  var t = Date.parse(endtime) - Date.parse(new Date());
 
   var seconds = Math.floor( (t/1000) % 60 );
   var minutes = Math.floor( (t/1000/60) % 60 );
