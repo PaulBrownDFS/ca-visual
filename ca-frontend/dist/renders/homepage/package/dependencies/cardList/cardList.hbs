@@ -1,16 +1,7 @@
-<div class="amp-ca-card-list
-{{#iff cards.length '<' 6}}
-amp-ca-prod-{{cards.length}}-rows
-{{else}}
-amp-ca-prod-3-rows
-{{/iff}}">
-    <div class="amp-ca-card-title">
-        {{ header }}
+<section class="CardList">
+  <div class="card">
+    {{#each cards}}
+        {{cardName}}
+    {{/each}}
     </div>
-
-    <div class="amp-ca-card-list-wrap">
-        {{#each cards}}
-            {{dynamicTemplate [@type] ../renderTypes this}}
-        {{/each}}
-    </div>
-</div>
+</section>
