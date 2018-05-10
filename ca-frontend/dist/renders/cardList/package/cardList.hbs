@@ -1,7 +1,40 @@
-<section class="CardList">
-  <div class="card">
+<section class="CardList {{#if cardlisttype}}{{cardlisttype}}{{/if}}" data-cardcolor="{{copycolour}}">
     {{#each cards}}
-        {{cardName}}
-    {{/each}}
+    <div class="card card{{math @index "+" 1}} {{../copycolour}}">
+      <picture>
+        <!-- WebP -->
+          <source type="image/webp" media="(max-width: 1023px)" srcset ="//images.dfs.co.uk/i/dfs/{{image.image.name}}{{#if image.seoText}}/{{image.seoText}}{{/if}}?w=255&fmt.jpeg.chroma=1,1,1&fmt.jpeg.interlaced=true&fmt=webp">
+
+          <source type="image/webp" media="(max-width: 1365px)" srcset ="//images.dfs.co.uk/i/dfs/{{image.image.name}}{{#if image.seoText}}/{{image.seoText}}{{/if}}?w=213&fmt.jpeg.chroma=1,1,1&fmt.jpeg.interlaced=true&fmt=webp">
+
+          <source type="image/webp" media="(min-width: 1366px)" srcset ="//images.dfs.co.uk/i/dfs/{{image.image.name}}{{#if image.seoText}}/{{image.seoText}}{{/if}}?w=291&fmt.jpeg.chroma=1,1,1&fmt.jpeg.interlaced=true&fmt=webp">
+
+
+
+          <!-- Jpeg -->
+          <source type="image/webp" media="(max-width: 1023px)" srcset ="//images.dfs.co.uk/i/dfs/{{image.image.name}}{{#if image.seoText}}/{{image.seoText}}{{/if}}?w=255">
+
+          <source media="(max-width: 1365px)" srcset ="//images.dfs.co.uk/i/dfs/{{image.image.name}}{{#if image.seoText}}/{{image.seoText}}{{/if}}?w=213">
+
+          <source media="(min-width: 1366px)" srcset ="//images.dfs.co.uk/i/dfs/{{image.image.name}}{{#if image.seoText}}/{{image.seoText}}{{/if}}?w=291">
+
+          <!-- FallBack Image -->
+
+           <img src="images.dfs.co.uk/i/dfs/{{image.image.name}}{{#if image.seoText}}/{{image.seoText}}{{/if}}?w=291" alt="{{image.imageAltText}}">
+      </picture>
+
+         <div class="cardlistCopy">
+           <h2 style="{{#if ../copycolour}}color:#{{../copycolour}}{{else}}color:#000;{{/if}}">{{description}}</h2>
+         </div>
+         <div class="cl_btn_wrapper">
+           <div class="cardlist_button">
+             <a href="{{link}}">
+               <p style="{{#if ../copycolour}}color:#{{../copycolour}};border: 2px solid #{{../copycolour}}{{else}}color:#000;border: 2px solid #000{{/if}}">{{linkValue}}
+               </p>
+             </a>
+           </div>
+         </div>
     </div>
+    {{/each}}
+    <div class="clearfix"></div>
 </section>

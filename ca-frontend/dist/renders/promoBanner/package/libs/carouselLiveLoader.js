@@ -1,5 +1,5 @@
 // ===========================================
-//  Carousel  Builder v1.0 PB MAY 2nd 2018
+//  Carousel  Builder v1.0 PB MAY 9th 2018
 // ===========================================
 var slideData = {};
     slideData.slides = [],
@@ -162,11 +162,19 @@ dfs.carouselText = function(target, text){
                     }
                     if(countDownOBj.days > 0) {
                       var line1 = "FINAL " + countDownOBj.days + " " + dayOrDays;
+                      var ampersand = true;
                     } else {
                       var line1 = "ENDS TODAY";
+                      var ampersand = false;
                     }
 
-                    var line2 = countDownOBj.hours + "<span>hrs </span>" + countDownOBj.minutes + "<span>mins </span>" + countDownOBj.seconds + "<span>secs </span>",
+                    if(ampersand) {
+                      var line2 = "& ";
+                    } else {
+                      var line2 = "";
+                    }
+
+                    line2 += countDownOBj.hours + "<span>hrs </span>" + countDownOBj.minutes + "<span>mins </span>" + countDownOBj.seconds + "<span>secs </span>",
                     line3 = countDownOBj.days === 0 ? messageC : "";
                     line4 = countDownOBj.days === 0 ? messageD : "";
 

@@ -23,7 +23,7 @@
 <script src="https://dev-solutions.s3.amazonaws.com/custom-demos/dfs2/dist/reusable/cms-javascript-sdk.min.js"></script>
 <script src="../../reusable/handlebars4011.min.js"></script>
 <script src="https://dev-solutions.s3.amazonaws.com/custom-demos/dfs2/dist/reusable/utils.js"></script>
-<script src="../../reusable/handlebars-helpers.min.js?v1"></script>
+<script src="../../reusable/handlebars_helpers.min.js?v1"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
 <script src="template.cardList.min.js?v1"></script>
@@ -57,7 +57,7 @@
           // if(productSKU) {
           //   data[0].productData = dfs.getXmlData(productSKU);
           // }
-
+            console.log(data[0]);
             var template = Handlebars.template(AmpCa.templates.cardList);
             document.querySelectorAll(".js_cardList_wrap")[0].innerHTML = template(data[0]);
         },
