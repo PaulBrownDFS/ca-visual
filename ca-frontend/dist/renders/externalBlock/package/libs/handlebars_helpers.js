@@ -211,6 +211,58 @@ if (typeof Handlebars !== 'undefined') {
     Handlebars.registerHelper("inc", function(value, options) {
         return parseInt(value) + 1;
     });
+
+    Handlebars.registerHelper("getWidth", function(card_type, device) {
+
+      if(card_type === 'Type_A') {
+
+        switch (device) {
+          case "M":
+          return '255';
+
+          case "D4":
+          return '213';
+
+          case "D6":
+          return '291';
+        }
+      }
+
+      if(card_type === 'Type_B') {
+
+        switch (device) {
+          case "M":
+          return '255';
+
+          case "D4":
+          return '294';
+
+          case "D6":
+          return '401';
+        }
+
+      }
+
+      if(card_type === 'Type_C' || card_type === 'Type_D') {
+
+        switch (device) {
+          case "M":
+          return '540';
+
+          case "D4":
+          return '456';
+
+          case "D6":
+          return '622';
+        }
+
+      }
+
+      if(card_type === 'Type_E') {
+
+      }
+
+    });
 }
 
 else {
