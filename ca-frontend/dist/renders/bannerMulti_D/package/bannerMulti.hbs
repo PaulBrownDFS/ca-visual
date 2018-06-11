@@ -57,29 +57,28 @@
                 <!-- webp -->
 
                   <!-- 600 Mobile roundel 2-->
-                  <source type="image/webp" media="(max-width: 1023px)"  srcset="//images.dfs.co.uk/i/dfs/{{EspotImage2.name}}?w=80%&qlt=100&fmt.jpeg.chroma=1,1,1&fmt.jpeg.interlaced=true&fmt=webp" />
+                  <source type="image/webp" media="(max-width: 1023px)"  srcset="//images.dfs.co.uk/i/dfs/{{#if ../spec.roiPrices }}ROI_{{/if}}{{EspotImage2.name}}?w=80%&qlt=100&fmt.jpeg.chroma=1,1,1&fmt.jpeg.interlaced=true&fmt=webp" />
 
                   <!-- 1024 width roundel 2-->
-                  <source type="image/webp" media="(max-width: 1365px)" srcset="//images.dfs.co.uk/i/dfs/{{EspotImage2.name}}?w=80%&qlt=100&fmt.jpeg.chroma=1,1,1&fmt.jpeg.interlaced=true&fmt=webp" />
+                  <source type="image/webp" media="(max-width: 1365px)" srcset="//images.dfs.co.uk/i/dfs/{{#if ../spec.roiPrices }}ROI_{{/if}}{{EspotImage2.name}}?w=80%&qlt=100&fmt.jpeg.chroma=1,1,1&fmt.jpeg.interlaced=true&fmt=webp" />
 
                   <!-- 1366 width roundel 2-->
-                    <source type="image/webp" media="(min-width: 1366px)" srcset="//images.dfs.co.uk/i/dfs/{{EspotImage2.name}}?qlt=90&fmt.jpeg.chroma=1,1,1&fmt.jpeg.interlaced=true&fmt=webp" />
+                    <source type="image/webp" media="(min-width: 1366px)" srcset="//images.dfs.co.uk/i/dfs/{{#if ../spec.roiPrices }}ROI_{{/if}}{{EspotImage2.name}}?qlt=90&fmt.jpeg.chroma=1,1,1&fmt.jpeg.interlaced=true&fmt=webp" />
 
                 <!-- Jpg -->
 
                   <!-- 600 Mobile roundel 2-->
-                    <source type="image/webp" media="(max-width: 1023px)"  srcset="//images.dfs.co.uk/i/dfs/{{EspotImage2.name}}?w=80%&qlt=100" />
+                    <source media="(max-width: 1023px)"  srcset="//images.dfs.co.uk/i/dfs/{{#if ../spec.roiPrices }}ROI_{{/if}}{{EspotImage2.name}}?w=80%&qlt=100" />
 
                   <!-- 1024 width roundel 2-->
 
-                    <source media="(max-width: 1365px)" srcset="//images.dfs.co.uk/i/dfs/{{EspotImage2.name}}?w=80%&qlt=100" />
+                    <source media="(max-width: 1365px)" srcset="//images.dfs.co.uk/i/dfs/{{#if ../spec.roiPrices }}ROI_{{/if}}{{EspotImage2.name}}?w=80%&qlt=100" />
 
                   <!-- 1366 width roundel 2-->
-                    <source media="(min-width: 1366px)" srcset="//images.dfs.co.uk/i/dfs/{{EspotImage2.name}}?qlt=90" />
+                    <source media="(min-width: 1366px)" srcset="//images.dfs.co.uk/i/dfs/{{#if ../spec.roiPrices }}ROI_{{/if}}{{EspotImage2.name}}?qlt=90" />
 
-                  <img src="//images.dfs.co.uk/i/dfs/{{EspotImage2.name}}?w=80%&qlt=100" alt ="{{EspotImage2.name}}"/>
+                  <img src="//images.dfs.co.uk/i/dfs/{{#if ../spec.roiPrices }}ROI_{{/if}}{{EspotImage2.name}}?w=80%&qlt=100" alt ="{{EspotImage2.name}}"/>
               </picture>
-            </picture>
             {{#if espot2URL }}
               </a>
             {{/if}}
@@ -100,11 +99,6 @@
       </a>
     </div>
   </div>
-  {{#if spec.roiPrices }}
-  <div class="roi">Showing ROI Carousel</div>
-  {{else}}
-  <div class="uk">Showing UK Carousel </div>
-  {{/if}}
   <style>
   .uk, .roi {
     text-align: center;
@@ -230,6 +224,11 @@
   @media (max-width: 1023px) {
       .carousel-control.left, .carousel-control.right {
         display: none;
+      }
+      .item.slideIndex{{inc @index}} .linkableRoundel2 {
+        position: absolute;
+        top: {{Espot2Image_mobiletop}}px ;
+        right: {{Espot2Image_mobileright}}px;
       }
   }
   </style>

@@ -10,7 +10,7 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         {{#each slides}}
-          <div class="item {{#if @first}} active {{/if}}" data-roi="{{../spec.roiPrices}}">
+          <div class="item {{#if @first}} active {{/if}} slideIndex{{inc @index}}" data-roi="{{../spec.roiPrices}}">
             <a href="{{productURL}}">
               <picture>
                 <!-- WebP -->
@@ -44,10 +44,34 @@
                   </div>
               </div>
             </a>
+            {{#if EspotImage2.name }}
+            <div class="linkableRoundel2">
+              {{#if espot2URL }}
+                <a href="{{espot2URL}}">
+              {{/if}}
+              <picture>
+                <!-- webp -->
+
+                  <!-- 600 Mobile roundel 2-->
+                  <source type="image/webp" media="(max-width: 1023px)"  srcset="//images.dfs.co.uk/i/dfs/{{#if ../spec.roiPrices }}ROI_{{/if}}{{EspotImage2.name}}?w=80%&qlt=100&fmt.jpeg.chroma=1,1,1&fmt.jpeg.interlaced=true&fmt=webp" />
+
+
+                <!-- Jpg -->
+
+                  <!-- 600 Mobile roundel 2-->
+                    <source media="(max-width: 1023px)"  srcset="//images.dfs.co.uk/i/dfs/{{#if ../spec.roiPrices }}ROI_{{/if}}{{EspotImage2.name}}?w=80%&qlt=100" />
+
+
+                  <img src="//images.dfs.co.uk/i/dfs/{{#if ../spec.roiPrices }}ROI_{{/if}}{{EspotImage2.name}}?w=80%&qlt=100" alt ="{{EspotImage2.name}}"/>
+              </picture>
+            {{#if espot2URL }}
+              </a>
+            {{/if}}
+          </div>
+          {{/if}}
           </div>
         {{/each}}
       </div>
-
       <!-- Left and right controls -->
       <a class="left carousel-control" href="#dfsCarousel" data-slide="prev">
         <span></span>
@@ -59,7 +83,6 @@
       </a>
     </div>
   </div>
-
   <style>
   .uk, .roi {
     text-align: center;
@@ -81,6 +104,11 @@
   .bannerTextContainer[data-messageid="slide_{{inc @index}}"] {
     bottom: {{textBottomPositionS}}px;
     left:{{textLeftPositionS}}px;
+  }
+  .item.slideIndex{{inc @index}} .linkableRoundel2 {
+    position: absolute;
+    top: {{Espot2Image_mobiletop}}px ;
+    right: {{Espot2Image_mobileright}}px;
   }
   h2.message{{inc @index}}a {
       color:#{{#if textAColour}}{{csv textAColour 'M'}}{{else}}000000{{/if}} !important;
