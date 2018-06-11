@@ -1,7 +1,7 @@
 <section class="CardList {{#if cardlisttype}}{{cardlisttype}}{{/if}}">
     {{#each cards}}
     <div class="card card{{math @index "+" 1}} color{{#if copycolour}}{{copycolour}}{{else}}000000{{/if}}">
-      <a href="{{link}}">
+      {{#if link}}<a href="{{link}}">{{/if}}
         <picture>
           <!-- WebP -->
             <source type="image/webp" media="(max-width: 1023px)" srcset ="//images.dfs.co.uk/i/dfs/{{image.image.name}}{{#if image.seoText}}/{{image.seoText}}{{/if}}?w={{getWidth ../cardlisttype "M" }}&fmt.jpeg.chroma=1,1,1&fmt.jpeg.interlaced=true&fmt=webp">
@@ -27,13 +27,15 @@
          <div class="cardlistCopy">
            <h2 style="{{#if copycolour}}color:#{{copycolour}}{{else}}color:#000;{{/if}}">{{description}}</h2>
          </div>
+         {{#if linkValue}}
          <div class="cl_btn_wrapper">
            <div class="cardlist_button">
                <p style="{{#if copycolour}}color:#{{copycolour}};border: 2px solid #{{copycolour}}{{else}}color:#000;border: 2px solid #000{{/if}}">{{linkValue}}
                </p>
            </div>
          </div>
-      </a>
+         {{/if}}
+      {{#if link}}</a>{{/if}}
     </div>
     {{/each}}
     <div class="clearfix"></div>

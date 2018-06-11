@@ -1,16 +1,17 @@
-<div class="amp-ca-card">
+<div style="text-align:center;" class="amp-ca-card">
     <div class="amp-ca-card-wrap">
-        {{dynamicTemplate false renderTypes image}}
+        <img src="//images.dfs.co.uk/i/dfs/{{image.image.name}}/image.seoText" alt="{{imageAltText}}">
 
         <div class="amp-ca-card-text-wrap">
             {{#if cardName}}
-                <div class="amp-ca-card-name">{{cardName}}</div>
+                <div class="amp-ca-card-name">Card Name: {{cardName}}</div>
             {{/if}}
             {{#if description}}
-                <p class="amp-ca-card-description">{{description}}</p>
+                <p class="amp-ca-card-description">Copy Text: {{description}}</p>
             {{/if}}
+            <br>
             {{#if link}}
-                <a class="amp-ca-card-link" href="{{link}}">
+                Link >>> <a class="amp-ca-card-link" href="{{link}}">
                     {{#if linkValue}}
                         {{linkValue}}
                     {{else}}
@@ -18,6 +19,7 @@
                     {{/if}}
                 </a>
             {{/if}}
+            <p>Link Address : {{link}}</p>
         </div>
     </div>
 </div>

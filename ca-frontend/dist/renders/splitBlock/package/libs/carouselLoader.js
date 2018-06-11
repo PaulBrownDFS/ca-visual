@@ -176,7 +176,7 @@ dfs.carouselText = function(target, text){
 
                     line2 = countDownOBj.hours + "<span>hrs </span>" + countDownOBj.minutes + "<span>mins </span>" + countDownOBj.seconds + "<span>secs </span>",
                     line3 = countDownOBj.days === 0 ? messageC : "";
-                    line4 = countDownOBj.days === 0 ? messageD : "";
+                    line4 = countDownOBj.days === 0 ? messageD : messageD;
 
                     dfs.carouselText('message' + messageID + "a", line1);
                     dfs.carouselText('message' + messageID + "b", line2);

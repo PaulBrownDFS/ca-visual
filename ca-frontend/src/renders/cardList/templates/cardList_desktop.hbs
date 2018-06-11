@@ -4,16 +4,13 @@
       {{#if link}}<a href="{{link}}">{{/if}}
         <picture>
           <!-- WebP -->
-            <source type="image/webp" media="(max-width: 1023px)" srcset ="//images.dfs.co.uk/i/dfs/{{image.image.name}}{{#if image.seoText}}/{{image.seoText}}{{/if}}?w={{getWidth ../cardlisttype "M" }}&fmt.jpeg.chroma=1,1,1&fmt.jpeg.interlaced=true&fmt=webp">
 
             <source type="image/webp" media="(max-width: 1365px)" srcset ="//images.dfs.co.uk/i/dfs/{{image.image.name}}{{#if image.seoText}}/{{image.seoText}}{{/if}}?w={{getWidth ../cardlisttype "D4" }}&fmt.jpeg.chroma=1,1,1&fmt.jpeg.interlaced=true&fmt=webp">
 
             <source type="image/webp" media="(min-width: 1366px)" srcset ="//images.dfs.co.uk/i/dfs/{{image.image.name}}{{#if image.seoText}}/{{image.seoText}}{{/if}}?w={{getWidth ../cardlisttype "D6" }}&fmt.jpeg.chroma=1,1,1&fmt.jpeg.interlaced=true&fmt=webp">
 
 
-
             <!-- Jpeg -->
-            <source type="image/webp" media="(max-width: 1023px)" srcset ="//images.dfs.co.uk/i/dfs/{{image.image.name}}{{#if image.seoText}}/{{image.seoText}}{{/if}}?w={{getWidth ../cardlisttype "M" }}">
 
             <source media="(max-width: 1365px)" srcset ="//images.dfs.co.uk/i/dfs/{{image.image.name}}{{#if image.seoText}}/{{image.seoText}}{{/if}}?w={{getWidth ../cardlisttype "D4" }}">
 

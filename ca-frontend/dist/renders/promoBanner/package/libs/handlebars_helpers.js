@@ -259,7 +259,16 @@ if (typeof Handlebars !== 'undefined') {
       }
 
       if(card_type === 'Type_E') {
+        switch (device) {
+          case "M":
+          return '151';
 
+          case "D4":
+          return '151';
+
+          case "D6":
+          return '151';
+        }
       }
 
     });

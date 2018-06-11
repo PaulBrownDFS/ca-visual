@@ -54,13 +54,15 @@
     AmpCa.utils.getCaData({
         auth: {
             baseUrl: 'https://c1.adis.ws',
-            id: '7e75b16e-12e2-4f64-bd48-a1a7a5bdf540',
+            //1bd14168-2dca-46e8-95d2-20bdf6a8cb43
+            //560dccba-7231-4ee9-9524-0c176583719c
+            id: '560dccba-7231-4ee9-9524-0c176583719c',
             store: 'dfs'
         },
         callback: function (data) {
           var productSKU = data[0].productSku;
-          if(productSKU){
-            data[0].productData = dfs.getXmlData(productSKU);
+          //if(productSKU){
+            //data[0].productData = dfs.getXmlData(productSKU);
             // console.log('!!!!!****', data[0]);
           }
 
@@ -159,7 +161,7 @@ dfs.carouselText = function(target, text){
                     }
                     line2 += countDownOBj.hours + "<span>hrs </span>" + countDownOBj.minutes + "<span>mins </span>" + countDownOBj.seconds + "<span>secs </span>",
                     line3 = countDownOBj.days === 0 ? messageC : "";
-                    line4 = countDownOBj.days === 0 ? messageD : "";
+                    line4 = countDownOBj.days === 0 ? messageD :  messageD;
 
                     dfs.carouselText('message' + messageID + "a", line1);
                     dfs.carouselText('message' + messageID + "b", line2);
