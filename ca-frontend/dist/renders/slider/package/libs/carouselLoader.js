@@ -134,6 +134,11 @@ dfs.carouselText = function(target, text){
             // console.log(textVariance1,textVariance2,textVariance3,textVariance4);
             var countDownOBj = dfs.getTimeRemaining(deadline, testDate);
 
+            if(isROI) {
+              messageC = messageC.replace('£', '&euro;');
+              messageD = messageD.replace('£', '&euro;');
+            }
+
             // Check if this Slide needs a text Update
 
             dfs.checkTextData(textVariance1, messageID, testDate);
