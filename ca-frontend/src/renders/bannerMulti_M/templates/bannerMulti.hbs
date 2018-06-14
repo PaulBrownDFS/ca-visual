@@ -134,6 +134,16 @@
     display:none;
   }
 
+  {{#if espot2mobile}}
+    .item.slideIndex{{inc @index}} .linkableRoundel2 {
+      display:block;
+    }
+  {{else}}
+    .item.slideIndex{{inc @index}} .linkableRoundel2 {
+      display:none;
+    }
+  {{/if}}
+
   {{/each}}
 
   </style>

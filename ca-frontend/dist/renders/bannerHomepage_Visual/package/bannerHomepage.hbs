@@ -113,7 +113,7 @@
       </div>
     {{/if}}
   <style>
-
+  /* June 13th 2018 */
   .productDetails {
     font-family: "HelveticaNeueW01-75Bold", Arial, sans-serif;
     font-size: 14px;
@@ -253,8 +253,15 @@
     }
   }
 @media (max-width: 1023px) {
-    .carousel-control.left, .carousel-control.right {
-      display: none;
-    }
+    {{#if espot2mobile}}
+      div.linkableRoundel2 {
+        display:block;
+      }
+      {{else}}
+      div.linkableRoundel2 {
+        display:none;
+      }
+    {{/if}}
 }
+
   </style>

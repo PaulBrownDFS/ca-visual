@@ -108,6 +108,7 @@
   <div class="uk">Showing UK Carousel </div>
   {{/if}}
   <style>
+  /*  13th June 2018 v1 */
   .uk, .roi {
     text-align: center;
     font-size: 14px;
@@ -227,11 +228,17 @@
       line-height:{{#if mobileTextBFontSize}}{{math tmobileTextBFontSize "-" 4}}{{else}}12{{/if}}px !important;
       display:none;
     }
+
+    {{#if espot2mobile}}
+      .item.slideIndex{{inc @index}} .linkableRoundel2 {
+        display:block;
+      }
+    {{else}}
+      .item.slideIndex{{inc @index}} .linkableRoundel2 {
+        display:none;
+      }
+    {{/if}}
   }
   {{/each}}
-  @media (max-width: 1023px) {
-      .carousel-control.left, .carousel-control.right {
-        display: none;
-      }
-  }
+
   </style>
