@@ -118,7 +118,7 @@
   .item.slideIndex{{inc @index}} .linkableRoundel2 {
     position: absolute;
     top: {{EspotImage2_top}}px ;
-    right: {{EspotImage2_right}}px;
+    {{#if anchorDEspot2Left}}left:{{else}}right:{{/if}} {{EspotImage2_right}}px;
   }
   h2.message{{inc @index}}a {
     color:#{{#if textAColour }}{{csv textAColour 'D'}}{{else}}000000{{/if}} !important;
@@ -157,6 +157,11 @@
     .bannerTextContainer[data-messageid="slide_{{inc @index}}"] {
       bottom: {{textBottomPositionM}}px;
       left:{{textLeftPositionM}}px;
+    }
+    .item.slideIndex{{inc @index}} .linkableRoundel2 {
+      position: absolute;
+      top: {{EspotImage2_top1024}}px ;
+      {{#if anchorDEspot2Left}}left:{{else}}right:{{/if}} {{EspotImage2_right1024}}px;
     }
     h2.message{{inc @index}}a {
       color:#{{#if textAColour}}{{csv textAColour 'D'}}{{else}}000000{{/if}} !important;
