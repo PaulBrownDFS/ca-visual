@@ -1,0 +1,242 @@
+<div class="carouselContainer">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-isroi="{{spec.roiPrices}}">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        {{#each slides}}
+          <li data-target="#myCarousel" data-slide-to="{{@index}}" {{#if @first}} class="active"{{/if}}></li>
+        {{/each}}
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        {{#each slides}}
+          <div class="item {{#if @first}} active {{/if}} slideIndex{{inc @index}}" data-roi="{{../spec.roiPrices}}">
+            <a href="{{productURL}}">
+              <picture>
+                <!-- WebP -->
+
+                <source type="image/webp" media="(max-width: 1023px)"  srcset="https://images.dfs.co.uk/i/dfs/?layer0=[canvas=600,462]&layer1=[src=/i/dfs/{{productImage.name}}{{#if mobileproductimage}}_mobile{{/if}}&{{#if mobileMImageCrop}}{{mobileMImageCrop}}&{{/if}}{{#if mobilepimagefullheight}}anchor=tl&w=600{{else if mobileSidebarImage.name}}w=600&h=384&anchor=tl&top=78{{/if}}]{{#if mobileSidebarImage.name}}&layer2=[/i/dfs/{{mobileSidebarImage.name}}&w=600]{{/if}}{{#if sideBarCharOnMobile }}&layer3=[/i/dfs/{{sidebarCharacter.name}}&{{mobileCharacterCrop}}&{{mobileCharacterSize}}&bottom={{sideBarCBottomMob}}&left={{sideBarCLeftMob}}&anchor=bl]{{/if}}&layer4=[src=/i/dfs/{{#if ../spec.roiPrices }}ROI_{{/if}}{{pricingImage.name}}{{#if pricingImageCrop}}&{{pricingImageCrop}}{{/if}}&anchor=br&right=0&bottom=30]{{#if EspotImage.name}}{{#if espot1mobile}}&layer5=[src=/i/dfs/{{EspotImage.name}}&anchor=tr&right={{EspotImage_mobileright}}&top={{EspotImage_mobiletop}}]{{/if}}{{/if}}&qlt={{#if mobileslidequality}}{{mobileslidequality}}{{else}}60{{/if}}&fmt.jpeg.chroma=1,1,1&fmt.jpeg.interlaced=true&fmt=webp">
+
+
+                <!-- Jpg -->
+                <source media="(max-width: 1023px)"  srcset="https://images.dfs.co.uk/i/dfs/?layer0=[canvas=600,462]&layer1=[src=/i/dfs/{{productImage.name}}{{#if mobileproductimage}}_mobile{{/if}}&{{#if mobileMImageCrop}}{{mobileMImageCrop}}&{{/if}}{{#if mobilepimagefullheight}}anchor=tl&w=600{{else if mobileSidebarImage.name}}w=600&h=384&anchor=tl&top=78{{/if}}]{{#if mobileSidebarImage.name}}&layer2=[/i/dfs/{{mobileSidebarImage.name}}&w=600]{{/if}}{{#if sideBarCharOnMobile }}&layer3=[/i/dfs/{{sidebarCharacter.name}}&{{mobileCharacterCrop}}&{{mobileCharacterSize}}&bottom={{sideBarCBottomMob}}&left={{sideBarCLeftMob}}&anchor=bl]{{/if}}&layer4=[src=/i/dfs/{{#if ../spec.roiPrices }}ROI_{{/if}}{{pricingImage.name}}{{#if pricingImageCrop}}&{{pricingImageCrop}}{{/if}}&anchor=br&right=0&bottom=30]{{#if EspotImage.name}}{{#if espot1mobile}}&layer5=[src=/i/dfs/{{EspotImage.name}}&anchor=tr&right={{EspotImage_mobileright}}&top={{EspotImage_mobiletop}}]{{/if}}{{/if}}&qlt={{#if mobileslidequality}}{{mobileslidequality}}{{else}}60{{/if}}&fmt.jpeg.chroma=1,1,1">
+
+
+                <img src="https://images.dfs.co.uk/i/dfs/?layer0=[canvas=600,462]&layer1=[src=/i/dfs/{{productImage.name}}{{#if mobileproductimage}}_mobile{{/if}}&{{#if mobileMImageCrop}}{{mobileMImageCrop}}&{{/if}}{{#if mobilepimagefullheight}}anchor=tl&w=600{{else if mobileSidebarImage.name}}w=600&h=384&anchor=tl&top=78{{/if}}]{{#if mobileSidebarImage.name}}&layer2=[/i/dfs/{{mobileSidebarImage.name}}&w=600]{{/if}}{{#if sideBarCharOnMobile }}&layer3=[/i/dfs/{{sidebarCharacter.name}}&{{mobileCharacterCrop}}&{{mobileCharacterSize}}&bottom={{sideBarCBottomMob}}&left={{sideBarCLeftMob}}&anchor=bl]{{/if}}&layer4=[src=/i/dfs/{{#if ../spec.roiPrices }}ROI_{{/if}}{{pricingImage.name}}{{#if pricingImageCrop}}&{{pricingImageCrop}}{{/if}}&anchor=br&right=0&bottom=30]{{#if EspotImage.name}}{{#if espot1mobile}}&layer5=[src=/i/dfs/{{EspotImage.name}}&anchor=tr&right={{EspotImage_mobileright}}&top={{EspotImage_mobiletop}}]{{/if}}{{/if}}&qlt={{#if mobileslidequality}}{{mobileslidequality}}{{else}}60{{/if}}&fmt.jpeg.chroma=1,1,1">
+              </picture>
+
+              <div class="bannerTextContainer {{#if hasCountdown}} carCountdown {{/if}}"
+                  data-countdown="{{countdownDeadline}}"
+                  data-testdate="{{../spec.testDate}}"
+                  data-messageid="slide_{{inc @index}}"
+                  data-startdays="{{daysBeforeEnd}}"
+                  data-messagec="{{messagec}}"
+                  data-messaged="{{messaged}}"
+                  data-tv1="{{textVariance1}}"
+                  data-tv2="{{textVariance2}}"
+                  data-tv3="{{textVariance3}}"
+                  data-tv4="{{textVariance4}}">
+                  <div class="bannerTextWrapper">
+                    <h2 class="message{{inc @index}}a">{{messagea}}</h2>
+                    <h2 class="message{{inc @index}}b">{{messageb}}</h2>
+                    <p class="message{{inc @index}}c"></p>
+                    <p class="message{{inc @index}}d"></p>
+                  </div>
+              </div>
+            </a>
+            {{#if EspotImage2.name }}
+            <div class="linkableRoundel2">
+              {{#if espot2URL }}
+                <a href="{{espot2URL}}">
+              {{/if}}
+              <picture>
+                <!-- webp -->
+
+                  <!-- 600 Mobile roundel 2-->
+                  <source type="image/webp" media="(max-width: 1023px)"  srcset="//images.dfs.co.uk/i/dfs/{{#if ../spec.roiPrices }}ROI_{{/if}}{{EspotImage2.name}}?w=80%&qlt=100&fmt.jpeg.chroma=1,1,1&fmt.jpeg.interlaced=true&fmt=webp" />
+
+                  <!-- 1024 width roundel 2-->
+                  <source type="image/webp" media="(max-width: 1365px)" srcset="//images.dfs.co.uk/i/dfs/{{#if ../spec.roiPrices }}ROI_{{/if}}{{EspotImage2.name}}?w=80%&qlt=100&fmt.jpeg.chroma=1,1,1&fmt.jpeg.interlaced=true&fmt=webp" />
+
+                  <!-- 1366 width roundel 2-->
+                    <source type="image/webp" media="(min-width: 1366px)" srcset="//images.dfs.co.uk/i/dfs/{{#if ../spec.roiPrices }}ROI_{{/if}}{{EspotImage2.name}}?qlt=90&fmt.jpeg.chroma=1,1,1&fmt.jpeg.interlaced=true&fmt=webp" />
+
+                <!-- Jpg -->
+
+                  <!-- 600 Mobile roundel 2-->
+                    <source media="(max-width: 1023px)"  srcset="//images.dfs.co.uk/i/dfs/{{#if ../spec.roiPrices }}ROI_{{/if}}{{EspotImage2.name}}?w=80%&qlt=100" />
+
+                  <!-- 1024 width roundel 2-->
+
+                    <source media="(max-width: 1365px)" srcset="//images.dfs.co.uk/i/dfs/{{#if ../spec.roiPrices }}ROI_{{/if}}{{EspotImage2.name}}?w=80%&qlt=100" />
+
+                  <!-- 1366 width roundel 2-->
+                    <source media="(min-width: 1366px)" srcset="//images.dfs.co.uk/i/dfs/{{#if ../spec.roiPrices }}ROI_{{/if}}{{EspotImage2.name}}?qlt=90" />
+
+                  <img src="//images.dfs.co.uk/i/dfs/{{#if ../spec.roiPrices }}ROI_{{/if}}{{EspotImage2.name}}?w=80%&qlt=100" alt ="{{EspotImage2.name}}"/>
+              </picture>
+            {{#if espot2URL }}
+              </a>
+            {{/if}}
+          </div>
+          {{/if}}
+          </div>
+        {{/each}}
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+  <style>
+  /*  13th June 2018 v1 */
+  .uk, .roi {
+    text-align: center;
+    font-size: 14px;
+    padding: 20px;
+  }
+  .bannerTextContainer.carCountdown {
+    display: table;
+  }
+  .bannerTextWrapper{
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .bannerTextWrapper h2.cdText span {
+    margin: 0 1px;
+    font-size: 15px !important;
+  }
+  {{#each slides}}
+  .bannerTextContainer[data-messageid="slide_{{inc @index}}"] {
+    bottom: {{textBottomPositionL}}px;
+    left:{{textLeftPositionL}}px;
+  }
+  .item.slideIndex{{inc @index}} .linkableRoundel2 {
+    position: absolute;
+    top: {{EspotImage2_top}}px ;
+    {{#if anchorDEspot2Left}}left:{{else}}right:{{/if}} {{EspotImage2_right}}px;
+  }
+  h2.message{{inc @index}}a {
+    color:#{{#if textAColour }}{{csv textAColour 'D'}}{{else}}000000{{/if}} !important;
+    font-size:{{#if textAFontSize}}{{textAFontSize}}{{else}}16{{/if}}px !important;
+    line-height:{{#if textAFontSize}}{{textAFontSize}}{{else}}16{{/if}}px !important;
+  }
+  h2.message{{inc @index}}b {
+    color:#{{#if textBColour}}{{ csv textBColour 'D'}}{{else}}000000{{/if}} !important;
+    font-size:{{#if textBFontSize}}{{textBFontSize}}{{else}}16{{/if}}px !important;
+    line-height:{{#if textBFontSize}}{{textBFontSize}}{{else}}16{{/if}}px !important;
+  }
+  p.message{{inc @index}}c {
+    color:#{{#if textCColour}}{{csv textCColour 'D'}}{{else}}000000{{/if}} !important;
+    font-size:{{#if textCFontSize}}{{textCFontSize}}{{else}}14{{/if}}px !important;
+    line-height:{{#if textCFontSize}}{{textCFontSize}}{{else}}14{{/if}}px !important;
+    margin-top:5px;
+    margin-bottom:0px;
+  }
+  p.message{{inc @index}}d {
+    color:#{{#if textDColour}}{{csv textDColour 'D'}}{{else}}000000{{/if}} !important;
+    font-size:{{#if textDFontSize}}{{textDFontSize}}{{else}}14{{/if}}px !important;
+    line-height:{{#if textDFontSize}}{{textDFontSize}}{{else}}14{{/if}}px !important;
+    margin: 0;
+    position: absolute;
+    left: 52px;
+    width: 264px;
+    line-height: 18px;
+    bottom: -45px;
+  }
+  @media (max-width: 1365px) {
+
+    .bannerTextWrapper h2.cdText span {
+      margin: 0 1px;
+      font-size: 15px !important;
+    }
+    .bannerTextContainer[data-messageid="slide_{{inc @index}}"] {
+      bottom: {{textBottomPositionM}}px;
+      left:{{textLeftPositionM}}px;
+    }
+    .item.slideIndex{{inc @index}} .linkableRoundel2 {
+      position: absolute;
+      top: {{EspotImage2_top1024}}px ;
+      {{#if anchorDEspot2Left}}left:{{else}}right:{{/if}} {{EspotImage2_right1024}}px;
+    }
+    h2.message{{inc @index}}a {
+      color:#{{#if textAColour}}{{csv textAColour 'D'}}{{else}}000000{{/if}} !important;
+      font-size:{{#if textAFontSize}}{{math textAFontSize "-" 4}}{{else}}14{{/if}}px !important;
+      line-height:{{#if textAFontSize}}{{math textAFontSize "-" 4}}{{else}}14{{/if}}px !important;
+    }
+    h2.message{{inc @index}}b {
+      color:#{{#if textBColour}}{{csv textBColour 'D'}}{{else}}000000{{/if}} !important;
+      font-size:{{#if textBFontSize}}{{math textBFontSize "-" 4}}{{else}}14{{/if}}px !important;
+      line-height:{{#if textBFontSize}}{{math textBFontSize "-" 4}}{{else}}14{{/if}}px !important;
+    }
+    p.message{{inc @index}}c {
+      color:#{{#if textCColour}}{{csv textCColour 'D'}}{{else}}000000{{/if}} !important;
+      font-size:{{#if textCFontSize}}{{math textCFontSize "-" 2}}{{else}}12{{/if}}px !important;
+      line-height:{{#if textCFontSize}}{{math textCFontSize "-" 2}}{{else}}12{{/if}}px !important;
+      margin-top:0px;
+      font-size:12px !important;
+    }
+    p.message{{inc @index}}d {
+      color:#{{#if textDColour}}{{csv textDColour 'D'}}{{else}}000000{{/if}} !important;
+      font-size:{{#if textDFontSize}}{{math textDFontSize "-" 4}}{{else}}12{{/if}}px !important;
+      line-height:{{#if textDFontSize}}{{math textDFontSize "-" 4}}{{else}}12{{/if}}px !important;
+      left:40px;
+      width: 198px;
+      bottom: -23px;
+      line-height:18px;
+    }
+  }
+  @media (max-width: 1023px) {
+    .bannerTextContainer[data-messageid="slide_{{inc @index}}"] {
+      bottom: {{textBottomPositionS}}px;
+      left:{{textLeftPositionS}}px;
+    }
+    .item.slideIndex{{inc @index}} .linkableRoundel2 {
+      position: absolute;
+      top: {{Espot2Image_mobiletop}}px ;
+      {{#if anchorMEspot2Left}}left:{{else}}right:{{/if}} {{Espot2Image_mobileright}}px;
+    }
+    h2.message{{inc @index}}a {
+        color:#{{#if textAColour}}{{csv textAColour 'M'}}{{else}}000000{{/if}} !important;
+      font-size:{{mobileTextAFontSize}}px !important;
+      line-height:{{mobileTextAFontSize}}px !important;
+    }
+    h2.message{{inc @index}}b {
+      color:#{{#if textBColour}}{{csv textBColour 'M'}}{{else}}000000{{/if}} !important;
+      font-size:{{mobileTextBFontSize}}px !important;
+      line-height:{{mobileTextBFontSize}}px !important;
+    }
+    p.message{{inc @index}}c {
+      color:#{{#if textCColour}}{{csv textCColour 'M'}}{{else}}000000{{/if}} !important;
+      font-size:{{#if mobileTextBFontSize}}{{math mobileTextBFontSize "-" 4}}{{else}}12{{/if}}px !important;
+      line-height:{{#if mobileTextBFontSize}}{{math tmobileTextBFontSize "-" 4}}{{else}}12{{/if}}px !important;
+      margin-top:5px;
+      display:none;
+    }
+    p.message{{inc @index}}d {
+      color:#{{#if textDColour}}{{csv textDColour 'M'}}{{else}}000000{{/if}} !important;
+      font-size:{{#if mobileTextBFontSize}}{{math mobileTextBFontSize "-" 4}}{{else}}12{{/if}}px !important;
+      line-height:{{#if mobileTextBFontSize}}{{math tmobileTextBFontSize "-" 4}}{{else}}12{{/if}}px !important;
+      display:none;
+    }
+
+    {{#if espot2mobile}}
+      .item.slideIndex{{inc @index}} .linkableRoundel2 {
+        display:block;
+      }
+    {{else}}
+      .item.slideIndex{{inc @index}} .linkableRoundel2 {
+        display:none;
+      }
+    {{/if}}
+  }
+  {{/each}}
+
+  </style>

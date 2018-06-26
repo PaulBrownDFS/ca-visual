@@ -22,6 +22,8 @@
 
 <div class="js_slider_wrap" style="margin:0 auto;"></div>
 
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
 <script src="../../reusable/cms-javascript-sdk.min.js"></script>
 
 <script src="../../reusable/handlebars.min.js"></script>
@@ -41,6 +43,18 @@
 <script src="../../../dist/renders/video/template.video.min.js"></script>
 
 <script>
+function getQueryVar(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split('&');
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split('=');
+        if (decodeURIComponent(pair[0]) == variable) {
+            return decodeURIComponent(pair[1]);
+        }
+    }
+    return false;
+}
+
     Handlebars.partials = AmpCa.templates;
 
     AmpCa.utils = new AmpCa.Utils();
@@ -48,7 +62,7 @@
     AmpCa.utils.getCaData({
         auth: {
             baseUrl: 'https://c1.adis.ws',
-            id: '2633e3f7-31d6-47b9-9fe4-db80ddc50e1d', //'653d3a56-c433-4d94-a585-894c42418082'
+            id: '5b074c7a-4b98-47ca-94e6-c3fa50bbd82f', //'653d3a56-c433-4d94-a585-894c42418082'
             store: 'dfs'
         },
         callback: function (data) {
@@ -64,5 +78,62 @@
         }
     });
 </script>
+
+<script>
+  function getHotSpots() {
+    // Step 1: Load the data - same URL as image ut
+    $.ajax({url: "https://i1.adis.ws/i/dfs/kendra_zjpb_oberon_charcoalandblackcombination_view3.json?metadata=true&v2", done: function(data){
+        // We need the original image size - size of media being displayed / original size of the media.
+        var ratio = 1000 / data.width;
+        // Lets find the hotspots first
+        if( data && data.metadata && data.metadata.hotSpots){
+          if( (data.metadata.hotSpots.hasPoint ||  data.metadata.hotSpots.hasPolygon) && data.metadata.hotSpots.hotSpots.list){
+            var hotspots = data.metadata.hotSpots.hotSpots.list;
+            var newwidth = data.width * ratio;
+            var newheight = data.height * ratio;
+            // Is there a polygon in the data? If so, create a map container
+            if( data.metadata.hotSpots.hasPolygon ){
+              $(".amp-ca-banner-pic-wrap").append("<map name='amp-img-map-example' id='amp-img-map-example'></map>");
+            }
+            // Go through the hotspots
+            for( var i=0; i< hotspots.length; i++){
+              var hotspot = hotspots[i];
+              // Check for a type
+              if( hotspot.points.x && hotspot.points.y){
+                // This is a hotspot
+                var newx = newwidth * hotspot.points.x;
+                var newy = newheight * hotspot.points.y;
+                // take away the size of the button to center...
+                newx = newx - 30;
+                newy = newy - 30;
+
+                // Check for the selector in meta data and add it to the class of the DIV for the hotspot
+                var spotclass = 'spot';
+                if( hotspot.selector){
+                  spotclass += " " + hotspot.selector;
+                }
+
+                $(".amp-ca-banner-pic-wrap").append("<div class='" + spotclass +"' style='left:" + newx + "px; top:" + newy + "px;'><a class='btn' href='#' onclick='doAmplienceAction(\"" + hotspot.target + "\")' title='" + hotspot.target + "'>+</a></div>");
+              } else {
+                // This is a polygon
+                var coords = "";
+                for( var j=0; j < hotspot.points.length; j++ ){
+                  coords += Math.round(newwidth * hotspot.points[j].x)+ "," + Math.round(newheight * hotspot.points[j].y) + ",";
+                }
+                coords = coords.substring(0, coords.length-1);
+                var str = "<area shape='poly' coords=" + coords + " href='#' onclick='doAmplienceAction(\"" + hotspot.target + "\")' title='" + hotspot.target + "'>";
+
+                $('#amp-img-map-example').append(str);
+              }
+            }
+          }
+        }
+      }, fail: function(args){
+        // Get a proper error state
+      }
+    });
+  }
+
+		</script>
 </body>
 </html>
