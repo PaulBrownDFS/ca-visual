@@ -32,23 +32,26 @@
                 <img src="https://5n60l42235zn1u0bktjuna29f.staging.bigcontent.io/i/dfs/?layer0=[canvas=1366,619]&layer1=[src=/i/dfs/{{productImage.name}}&{{#if desktopMImageCrop}}{{desktopMImageCrop}}&{{/if}}{{#if productImageFullWidth}}w=1366&h=619&anchor=l&left=0{{else}}w=1024&h=619&anchor=l&left=342{{/if}}]{{#if image.name}}&layer2=[/i/dfs/{{image.name}}&left=0&h=100%]{{/if}}{{#if sidebarCharacter.name}}&layer3=[/i/dfs/{{sidebarCharacter.name}}&{{desktopCharacterCrop}}&{{desktopCharacterSize}}&bottom={{sideBarCBottom}}&left={{sideBarCLeft}}&anchor=bl]{{/if}}{{#if pricingImage.name}}&layer4=[src=/i/dfs/{{#if ../spec.roiPrices }}ROI_{{/if}}{{pricingImage.name}}&anchor=br&right=24&bottom=24]{{/if}}{{#if EspotImage.name}}&layer5=[src=/i/dfs/{{#if ../spec.roiPrices }}ROI_{{/if}}{{EspotImage.name}}&anchor=tr&right={{EspotImage_right}}&top={{EspotImage_top}}]{{/if}}&qlt={{#if desktopslidequality}}{{desktopslidequality}}{{else}}60{{/if}}&fmt.jpeg.chroma=1,1,1">
               </picture>
 
-              <div class="bannerTextContainer {{#if hasCountdown}} carCountdown {{/if}}"
-                  data-countdown="{{countdownDeadline}}"
-                  data-testdate="{{../spec.testDate}}"
-                  data-messageid="slide_{{inc @index}}"
-                  data-startdays="{{daysBeforeEnd}}"
-                  data-messagec="{{messagec}}"
-                  data-messaged="{{messaged}}"
-                  data-tv1="{{textVariance1}}"
-                  data-tv2="{{textVariance2}}"
-                  data-tv3="{{textVariance3}}"
-                  data-tv4="{{textVariance4}}">
-                  <div class="bannerTextWrapper">
-                    <h2 class="message{{inc @index}}a">{{messagea}}</h2>
-                    <h2 class="message{{inc @index}}b">{{messageb}}</h2>
-                    <p class="message{{inc @index}}c"></p>
-                    <p class="message{{inc @index}}d"></p>
+              <div class="bannerTextContainer {{#if hasCountdown}} carCountdown {{/if}}" data-messageid=slide_{{inc @index}}>
+                <!-- START:: V2 CountDown (PB) July 2nd 2018-->
+                  <div class="countdownContainer countdown_v2 {{countdownClassName}} {{#if hasCountdown}} {{else}} nonCDText{{/if}}"
+                        data-deadline="{{countdownDeadline}}"
+                        data-startdays="{{daysBeforeEnd}}"
+                        data-daterange1="{{textVariance1}}"
+                        data-daterange2="{{textVariance2}}"
+                        data-daterange3="{{textVariance3}}"
+                        data-daterange4="{{textVariance4}}"
+                        data-testdate="">
+                    <h6 class="cdHeader"><!-- DEFAULT HEADER TEXT--></h6>
+                      <section class="timer {{#if hasCountdown}} showCountdown{{else}}hideCountdown{{/if}}">
+                        <img src="//dfs.a.bigcontent.io/v1/static/loading_please_wait?v30" alt="loading..">
+                      </section>
+                    <h6 class="cdFooter"><!-- DEFAULT FOOTER TEXT--></h6>
                   </div>
+                  <div style="display:none;" class="cdEndMessage {{countdownClassName}}">
+                    <h3>ENDS TODAY<br>Order direct until midnight</h3>
+                  </div>
+                <!-- END:: V2 CountDown (PB) July 2nd 2018-->
               </div>
             </a>
             {{#if EspotImage2.name }}
@@ -108,11 +111,14 @@
   <div class="uk">Showing UK Carousel </div>
   {{/if}}
   <style>
-  /*  13th June 2018 v1 */
+  /*  13th June 2018 v2 */
   .uk, .roi {
     text-align: center;
     font-size: 14px;
     padding: 20px;
+  }
+  .hideCountdown {
+    display:none;
   }
   .bannerTextContainer.carCountdown {
     display: table;
@@ -135,7 +141,7 @@
     top: {{EspotImage2_top}}px ;
     {{#if anchorDEspot2Left}}left:{{else}}right:{{/if}} {{EspotImage2_right}}px;
   }
-  h2.message{{inc @index}}a {
+  /* h2.message{{inc @index}}a {
     color:#{{#if textAColour }}{{csv textAColour 'D'}}{{else}}000000{{/if}} !important;
     font-size:{{#if textAFontSize}}{{textAFontSize}}{{else}}16{{/if}}px !important;
     line-height:{{#if textAFontSize}}{{textAFontSize}}{{else}}16{{/if}}px !important;
@@ -162,7 +168,18 @@
     width: 264px;
     line-height: 18px;
     bottom: -45px;
+  } */
+  .slideIndex{{inc @index}} .countdown_v2.HPcd-default.nonCDText h6.cdHeader {
+    font-size: {{#if textAFontSize}}{{textAFontSize}}{{else}}20{{/if}}px !important;
+    line-height: {{#if textAFontSize}}{{textAFontSize}}{{else}}20{{/if}}px !important;
+    color:#{{#if textAColour }}{{csv textAColour 'D'}}{{else}}000000{{/if}} !important;
   }
+  .slideIndex{{inc @index}} .countdown_v2.HPcd-default.nonCDText h6.cdFooter {
+    font-size: {{#if textBFontSize}}{{textBFontSize}}{{else}}18{{/if}}px !important;
+    line-height: {{#if textBFontSize}}{{textBFontSize}}{{else}}18{{/if}}px !important;
+    color:#{{#if textBColour}}{{ csv textBColour 'D'}}{{else}}000000{{/if}} !important;
+  }
+
   @media (max-width: 1365px) {
 
     .bannerTextWrapper h2.cdText span {
@@ -178,7 +195,15 @@
       top: {{EspotImage2_top1024}}px ;
       {{#if anchorDEspot2Left}}left:{{else}}right:{{/if}} {{EspotImage2_right1024}}px;
     }
-    h2.message{{inc @index}}a {
+    .slideIndex{{inc @index}} .countdown_v2.HPcd-default.nonCDText h6.cdHeader {
+      font-size:{{#if textAFontSize}}{{math textAFontSize "-" 5}}{{else}}14{{/if}}px !important;
+      line-height:{{#if textAFontSize}}{{math textAFontSize "-" 5}}{{else}}14{{/if}}px !important;
+    }
+    .slideIndex{{inc @index}} .countdown_v2.HPcd-default.nonCDText h6.cdFooter {
+      font-size:{{#if textBFontSize}}{{math textBFontSize "-" 5}}{{else}}14{{/if}}px !important;
+      line-height:{{#if textBFontSize}}{{math textBFontSize "-" 5}}{{else}}14{{/if}}px !important;
+    }
+    /* h2.message{{inc @index}}a {
       color:#{{#if textAColour}}{{csv textAColour 'D'}}{{else}}000000{{/if}} !important;
       font-size:{{#if textAFontSize}}{{math textAFontSize "-" 4}}{{else}}14{{/if}}px !important;
       line-height:{{#if textAFontSize}}{{math textAFontSize "-" 4}}{{else}}14{{/if}}px !important;
@@ -203,7 +228,7 @@
       width: 198px;
       bottom: -23px;
       line-height:18px;
-    }
+    } */
   }
   @media (max-width: 1023px) {
     .bannerTextContainer[data-messageid="slide_{{inc @index}}"] {
