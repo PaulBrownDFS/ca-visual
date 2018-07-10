@@ -316,7 +316,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 // ===========================================
-//  Carousel Builder v2.1 PB June 25th
+//  Carousel Builder v2.1 PB JULY 10th 2018
 // ===========================================
 
   if(!dfs) {
