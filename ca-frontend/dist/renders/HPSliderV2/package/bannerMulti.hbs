@@ -1,9 +1,9 @@
 <div class="carouselContainer">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-isroi="{{spec.roiPrices}}">
+    <div id="hpCarousel" class="carousel slide" data-ride="carousel" data-isroi="{{spec.roiPrices}}">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         {{#each slides}}
-          <li data-target="#myCarousel" data-slide-to="{{@index}}" {{#if @first}} class="active"{{/if}}></li>
+          <li data-target="#hpCarousel" data-slide-to="{{@index}}" {{#if @first}} class="active"{{/if}}></li>
         {{/each}}
       </ol>
 
@@ -41,6 +41,7 @@
                         data-daterange2="{{textVariance2}}"
                         data-daterange3="{{textVariance3}}"
                         data-daterange4="{{textVariance4}}"
+                        data-hidefinalmessage="{{#if hasCountdown}}false{{else}}true{{/if}}"
                         data-testdate="">
                     <h6 class="cdHeader"><!-- DEFAULT HEADER TEXT--></h6>
                       <section class="timer {{#if hasCountdown}} showCountdown{{else}}hideCountdown{{/if}}">
@@ -95,11 +96,11 @@
       </div>
 
       <!-- Left and right controls -->
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <a class="left carousel-control" href="#hpCarousel" data-slide="prev">
         <span></span>
         <span class="sr-only">Previous</span>
       </a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <a class="right carousel-control" href="#hpCarousel" data-slide="next">
         <span></span>
         <span class="sr-only">Next</span>
       </a>
@@ -240,7 +241,7 @@
       top: {{Espot2Image_mobiletop}}px ;
       {{#if anchorMEspot2Left}}left:{{else}}right:{{/if}} {{Espot2Image_mobileright}}px;
     }
-    h2.message{{inc @index}}a {
+    /* h2.message{{inc @index}}a {
         color:#{{#if textAColour}}{{csv textAColour 'M'}}{{else}}000000{{/if}} !important;
       font-size:{{mobileTextAFontSize}}px !important;
       line-height:{{mobileTextAFontSize}}px !important;
@@ -262,7 +263,7 @@
       font-size:{{#if mobileTextBFontSize}}{{math mobileTextBFontSize "-" 4}}{{else}}12{{/if}}px !important;
       line-height:{{#if mobileTextBFontSize}}{{math tmobileTextBFontSize "-" 4}}{{else}}12{{/if}}px !important;
       display:none;
-    }
+    } */
 
     {{#if espot2mobile}}
       .item.slideIndex{{inc @index}} .linkableRoundel2 {

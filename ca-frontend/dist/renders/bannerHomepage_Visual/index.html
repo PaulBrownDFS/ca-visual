@@ -129,6 +129,7 @@ dfs.countdownv2 = {
           data = $(_this).data(),
           startDays = data.startdays,
           deadline = data.deadline;
+          hideFinalMessage = data.hidefinalmessage;
 
           if(data.testdate) {
             var testDate = dfs.countdownv2.convertDate(data.testdate);
@@ -172,7 +173,7 @@ dfs.countdownv2 = {
                 $(_this).css('display','none');
               }
               $(_this).children('section').html(timerHtml);
-              if( timer.days == 0 && !dfs.countdownv2.isMobile() ){
+              if( timer.days == 0 && !dfs.countdownv2.isMobile() && !hideFinalMessage){
                 //show ending footer if last day and desktop
                 $(_this).next('div').css('display','block');
               }
