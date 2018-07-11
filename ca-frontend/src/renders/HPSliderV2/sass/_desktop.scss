@@ -470,14 +470,15 @@
 .countdownContainer.HPcd-default .timer p {
     color: #fff;
 }
+
 .cdEndMessage.HPcd-default {
+    bottom: -49px;
     background: #ffe02e;
 }
-
 .cdEndMessage.HPcd-default h3 {
     color: #fff !important;
     font-family: "HelveticaNeueW01-75Bold", Arial, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     margin: 0;
     color:#000 !important;
 }
@@ -508,8 +509,11 @@
   .countdownContainer h6.cdHeader, .countdownContainer h6.cdFooter {
       font-size: 14px;
   }
+  .cdEndMessage.HPcd-default {
+      bottom: -43px;
+  }
   .cdEndMessage.HPcd-default h3 {
-      font-size: 13px;
+      font-size: 14px;
   }
 
 
