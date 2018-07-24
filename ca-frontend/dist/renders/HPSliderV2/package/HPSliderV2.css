@@ -491,7 +491,7 @@
   left: 3px;
 }
 
-/* HPCD Styles */
+/* HPCD DEFAULT Styles */
 /* countdown colour */
 .countdownContainer.HPcd-default .timer p span {
   color: #fff;
@@ -559,4 +559,96 @@
   }
 }
 
-/* End HPCD Styles */
+/* End HPCD DEFAULT Styles */
+/* HPCD EARLYBIRD Styles */
+/* countdown colour */
+.countdownContainer.HPcd_EarlyBird .timer {
+  width: 212px;
+  margin: 5px auto;
+  background: #000;
+}
+
+.countdownContainer.HPcd_EarlyBird .timer p {
+  width: 53px;
+  margin: 3px 0;
+  font-size: 11px;
+  text-align: center;
+  float: left;
+  clear: none;
+}
+
+.countdownContainer.HPcd_EarlyBird .timer p span {
+  font-size: 24px;
+  font-family: "HelveticaNeueW01-45Ligh", Arial, sans-serif;
+  display: block;
+  color: #fff;
+}
+
+/* countdown header and footer colours */
+.countdownContainer.HPcd_EarlyBird h6 {
+  color: #000 !important;
+}
+
+.countdownContainer.HPcd_EarlyBird h6.cdHeader, .countdownContainer.HPcd_EarlyBird h6.cdFooter {
+  font-size: 14px;
+}
+
+/* Countdown Labels Colours */
+.countdownContainer.HPcd_EarlyBird .timer p {
+  color: #fff;
+}
+
+.cdEndMessage.HPcd_EarlyBird {
+  bottom: -47px;
+  background: #ffe02e;
+  height: 52px;
+}
+
+.cdEndMessage.HPcd_EarlyBird h3 {
+  color: #fff !important;
+  font-family: "HelveticaNeueW01-75Bold", Arial, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  color: #000 !important;
+}
+
+.countdownContainer.HPcd_EarlyBird span.cdDays, .countdownContainer.HPcd_EarlyBird span.cdHours, .countdownContainer.HPcd_EarlyBird span.cdMinutes {
+  border-right: 1px solid #555;
+}
+
+/* HPCD EARLYBIRD 1024 Styles */
+@media (max-width: 1365px) {
+  .bannerTextContainer {
+    width: 192px;
+  }
+  .countdownContainer {
+    width: 163px;
+  }
+  .countdownContainer.HPcd_EarlyBird .timer {
+    width: 163px;
+    padding: 1px 0;
+  }
+  .countdownContainer.HPcd_EarlyBird .timer p {
+    width: 40px;
+    font-size: 9px;
+  }
+  .countdownContainer.HPcd_EarlyBird .timer p span {
+    font-size: 15px;
+  }
+  .cdEndMessage {
+    width: 192px;
+    left: 0px;
+  }
+  .countdownContainer.HPcd_EarlyBird h6.cdHeader, .countdownContainer.HPcd_EarlyBird h6.cdFooter {
+    font-size: 11px;
+  }
+  .cdEndMessage.HPcd_EarlyBird {
+    bottom: -39px;
+    height: 45px;
+  }
+  .cdEndMessage.HPcd_EarlyBird h3 {
+    font-size: 14px;
+  }
+}
+
+/* END:: HPCD EARLYBIRD Styles */
