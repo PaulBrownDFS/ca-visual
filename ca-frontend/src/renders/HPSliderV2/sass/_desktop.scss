@@ -523,6 +523,9 @@
   .countdownContainer {
       width:180px;
   }
+  .countdownContainer h6.cdHeader, .countdownContainer h6.cdFooter {
+      line-height: 12px;
+  }
 }
 
 /* End HPCD DEFAULT Styles */
