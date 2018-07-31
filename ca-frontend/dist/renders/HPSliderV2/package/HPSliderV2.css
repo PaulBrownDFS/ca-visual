@@ -553,15 +553,6 @@
   }
 }
 
-@media (max-width: 1023px) {
-  .countdownContainer {
-    width: 180px;
-  }
-  .countdownContainer h6.cdHeader, .countdownContainer h6.cdFooter {
-    line-height: 12px;
-  }
-}
-
 /* End HPCD DEFAULT Styles */
 /* HPCD EARLYBIRD Styles */
 /* countdown colour */
@@ -651,6 +642,19 @@
   }
   .cdEndMessage.HPcd_EarlyBird h3 {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .countdownContainer {
+    width: 190px;
+  }
+  .countdownContainer h6.cdHeader, .countdownContainer h6.cdFooter {
+    line-height: 12px;
+  }
+  .countdownContainer .timer p span {
+    font-family: "HelveticaNeueW01-75Bold", Arial, sans-serif !important;
+    font-weight: 300;
   }
 }
 
