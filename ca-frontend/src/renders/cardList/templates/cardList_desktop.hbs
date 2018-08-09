@@ -37,3 +37,14 @@
     {{/each}}
     <div class="clearfix"></div>
 </section>
+<style>
+section.CardList .cardlistCopy h2 {
+  font-size: {{#if copyFontSize}}{{copyFontSize}}{{else}}36{{/if}}px !important;
+}
+
+@media (max-width: 1365px) {
+  section.CardList .cardlistCopy h2 {
+    font-size: {{#if copyFontSize}}{{math copyFontSize "-" 6}}{{else}}30{{/if}}px !important;
+  }
+}
+</style>

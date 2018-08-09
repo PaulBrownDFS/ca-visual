@@ -31,3 +31,8 @@
     {{/each}}
     <div class="clearfix"></div>
 </section>
+<style>
+  section.CardList .cardlistCopy h2 {
+    font-size: {{#if copyFontSize}}{{math copyFontSize "-" 8}}{{else}}28{{/if}}px !important;
+  }
+</style>
