@@ -1,4 +1,4 @@
-<section class="CardList {{#if cardlisttype}}{{cardlisttype}}{{/if}}">
+<section id="{{cardListCssId}}" class="CardList {{#if cardlisttype}}{{cardlisttype}}{{/if}}">
     {{#each cards}}
     <div class="card card{{math @index "+" 1}} color{{#if copycolour}}{{copycolour}}{{else}}000000{{/if}}">
       {{#if link}}<a href="{{link}}">{{/if}}
@@ -42,19 +42,22 @@
 </section>
 
 <style>
-section.CardList .cardlistCopy h2 {
+{{#each cards}}
+{{#if ../cardListCssId}}#{{../cardListCssId}}{{/if}}.CardList .card{{math @index "+" 1}} .cardlistCopy h2 {
   font-size: {{#if copyFontSize}}{{copyFontSize}}{{else}}36{{/if}}px !important;
 }
 
 @media (max-width: 1365px) {
-  section.CardList .cardlistCopy h2 {
+  {{#if ../cardListCssId}}#{{../cardListCssId}}{{/if}}.CardList .card{{math @index "+" 1}} .cardlistCopy h2 {
     font-size: {{#if copyFontSize}}{{math copyFontSize "-" 6}}{{else}}30{{/if}}px !important;
   }
 }
 
 @media (max-width: 1023px) {
-  section.CardList .cardlistCopy h2 {
+  {{#if ../cardListCssId}}#{{../cardListCssId}}{{/if}}.CardList .card{{math @index "+" 1}} .cardlistCopy h2 {
     font-size: {{#if copyFontSize}}{{math copyFontSize "-" 8}}{{else}}28{{/if}}px !important;
   }
 }
+{{/each}}
+
 </style>
