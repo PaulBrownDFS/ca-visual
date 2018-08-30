@@ -14,7 +14,7 @@ section.CardList {
     margin: 0 41px;
 }
 
-section.CardList.Type_A .card.card2, section.CardList.Type_A .card.card3, section.CardList.Type_A .card.card4 {
+section.CardList.Type_A .card.card2, section.CardList.Type_A .card.card3, section.CardList.Type_A .card.card4, section.CardList.Type_A .card.card5, section.CardList.Type_A .card.card6 {
     margin-left: 40px;
 }
 
@@ -153,7 +153,7 @@ section.CardList.Type_E {
   section.CardList .cl_btn_wrapper {
     bottom:30px;
   }
-  section.CardList.Type_A .card.card2, section.CardList.Type_A .card.card3, section.CardList.Type_A .card.card4 {
+  section.CardList.Type_A .card.card2, section.CardList.Type_A .card.card3, section.CardList.Type_A .card.card4, section.CardList.Type_A .card.card5, section.CardList.Type_A .card.card6 {
       margin-left: 30px;
   }
   section.CardList .cardlistCopy h2 {
@@ -237,7 +237,7 @@ section.CardList.Type_E {
   section.CardList {
       margin: 0 30px;
   }
-  section.CardList.Type_A .card.card3 {
+  section.CardList.Type_A .card.card3, section.CardList.Type_A .card.card5 {
       margin-left: 0px !important;
   }
 
