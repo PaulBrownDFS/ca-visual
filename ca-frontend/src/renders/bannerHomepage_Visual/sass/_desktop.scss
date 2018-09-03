@@ -476,6 +476,9 @@
     margin: 0;
     color:#000 !important;
 }
+section.timer {
+  height: 54px;
+}
 
 // HPCD 1024 Styles
 @media (max-width: 1365px) {
@@ -599,6 +602,10 @@
   }
   .cdEndMessage.HPcd_EarlyBird h3 {
       font-size: 14px;
+  }
+
+  section.timer {
+    height: 32px;
   }
 
 

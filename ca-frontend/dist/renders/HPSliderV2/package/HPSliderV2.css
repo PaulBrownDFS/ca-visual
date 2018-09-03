@@ -520,6 +520,10 @@
   color: #000 !important;
 }
 
+section.timer {
+  height: 54px;
+}
+
 @media (max-width: 1365px) {
   .bannerTextContainer {
     width: 192px;
@@ -550,6 +554,9 @@
   }
   .cdEndMessage.HPcd-default h3 {
     font-size: 14px;
+  }
+  section.timer {
+    height: 32px;
   }
 }
 
