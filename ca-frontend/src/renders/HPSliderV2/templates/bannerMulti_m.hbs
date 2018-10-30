@@ -17,6 +17,8 @@
 
                 <source type="image/webp" media="(max-width: 1023px)"  srcset="https://{{image.defaultHost}}/i/dfs/?layer0=[canvas=600,462]&layer1=[src=/i/dfs/{{productImage.name}}{{#if mobileproductimage}}_mobile{{/if}}&{{#if mobileMImageCrop}}{{mobileMImageCrop}}&{{/if}}{{#if mobilepimagefullheight}}anchor=tl&w=600{{else if mobileSidebarImage.name}}w=600&h=384&anchor=tl&top=78{{/if}}]{{#if mobileSidebarImage.name}}&layer2=[/i/dfs/{{mobileSidebarImage.name}}&w=600]{{/if}}{{#if sideBarCharOnMobile }}&layer3=[/i/dfs/{{sidebarCharacter.name}}&{{mobileCharacterCrop}}&{{mobileCharacterSize}}&bottom={{sideBarCBottomMob}}&left={{sideBarCLeftMob}}&anchor=bl]{{/if}}&layer4=[src=/i/dfs/{{#if ../spec.roiPrices }}ROI_{{/if}}{{pricingImage.name}}{{#if pricingImageCrop}}&{{pricingImageCrop}}{{/if}}&anchor=br&right=0&bottom=30]{{#if EspotImage.name}}{{#if espot1mobile}}&layer5=[src=/i/dfs/{{EspotImage.name}}{{#if espot1hasownmobileimage}}_mobile{{/if}}&anchor=tr&right={{EspotImage_mobileright}}&top={{EspotImage_mobiletop}}]{{/if}}{{/if}}&qlt={{#if mobileslidequality}}{{mobileslidequality}}{{else}}60{{/if}}&fmt.jpeg.chroma=1,1,1&fmt.jpeg.interlaced=true&fmt=webp">
 
+
+
                 <!-- Jpg -->
                 <source media="(max-width: 1023px)"  srcset="https://{{image.defaultHost}}/i/dfs/?layer0=[canvas=600,462]&layer1=[src=/i/dfs/{{productImage.name}}{{#if mobileproductimage}}_mobile{{/if}}&{{#if mobileMImageCrop}}{{mobileMImageCrop}}&{{/if}}{{#if mobilepimagefullheight}}anchor=tl&w=600{{else if mobileSidebarImage.name}}w=600&h=384&anchor=tl&top=78{{/if}}]{{#if mobileSidebarImage.name}}&layer2=[/i/dfs/{{mobileSidebarImage.name}}&w=600]{{/if}}{{#if sideBarCharOnMobile }}&layer3=[/i/dfs/{{sidebarCharacter.name}}&{{mobileCharacterCrop}}&{{mobileCharacterSize}}&bottom={{sideBarCBottomMob}}&left={{sideBarCLeftMob}}&anchor=bl]{{/if}}&layer4=[src=/i/dfs/{{#if ../spec.roiPrices }}ROI_{{/if}}{{pricingImage.name}}{{#if pricingImageCrop}}&{{pricingImageCrop}}{{/if}}&anchor=br&right=0&bottom=30]{{#if EspotImage.name}}{{#if espot1mobile}}&layer5=[src=/i/dfs/{{EspotImage.name}}{{#if espot1hasownmobileimage}}_mobile{{/if}}&anchor=tr&right={{EspotImage_mobileright}}&top={{EspotImage_mobiletop}}]{{/if}}{{/if}}&qlt={{#if mobileslidequality}}{{mobileslidequality}}{{else}}60{{/if}}&fmt.jpeg.chroma=1,1,1">
 
@@ -34,7 +36,7 @@
                         data-daterange2="{{textVariance2}}"
                         data-daterange3="{{textVariance3}}"
                         data-daterange4="{{textVariance4}}"
-                        data-hidefinalmessage="{{#if hasCountdown}}false{{else}}true{{/if}}"
+                        data-hidefinalmessage="{{#if hideFinalMessage}}true{{else}}false{{/if}}"
                         data-testdate="">
                     <h6 class="cdHeader"><!-- DEFAULT HEADER TEXT--></h6>
                       <section class="timer {{#if hasCountdown}} showCountdown{{else}}hideCountdown{{/if}}">
@@ -99,6 +101,7 @@
       </a>
     </div>
   </div>
+
   <style>
   /*  13th June 2018 v2 */
   .uk, .roi {

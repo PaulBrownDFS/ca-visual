@@ -316,7 +316,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 // ===========================================
-//  Carousel Builder v2.1 PB JULY 10th 2018
+//  Carousel Builder v2.1 PB OCT 3 2018
 // ===========================================
 
   if(!dfs) {
@@ -444,10 +444,13 @@ dfs.countdownv2 = {
   addCountdown: function() {
     $('div.countdown_v2').each(function (index, value) {
       var _this = this,
-          data = $(_this).data(),
-          startDays = data.startdays,
-          deadline = data.deadline,
-          hideFinalMessage = data.hidefinalmessage;
+          deadline = [],
+          startDays = [],
+          hideFinalMessage = [],
+          data = $(_this).data();
+          hideFinalMessage[index] = data.hidefinalmessage;
+          deadline[index] = data.deadline;
+          startDays[index] = data.startdays;
 
           if(data.testdate) {
             var testDate = dfs.countdownv2.convertDate(data.testdate);
@@ -482,16 +485,16 @@ dfs.countdownv2 = {
 
 
             // process countdown
-            var jdate = dfs.countdownv2.convertDate(deadline);
+            var jdate = dfs.countdownv2.convertDate(deadline[index]);
             var timer = dfs.countdownv2.timeRemaining(jdate, testDate);
-            if(startDays >= timer.days) {
+            if(startDays[index] >= timer.days) {
               var timerHtml = "<p><span class=\"cdDays\">" + timer.days + "</span> Days</p><p><span class=\"cdHours\">" + timer.hours + "</span> Hours</p><p><span class=\"cdMinutes\">" + timer.minutes + "</span> Minutes</p><p><span class=\"seconds\">" + timer.seconds + "</span> Seconds</p><div class=\"clearfix\"></div>";
               if(timer.days < 0) {
                 dfs.countdownv2.stopTimer(index);
                 $(_this).css('display','none');
               }
               $(_this).children('section').html(timerHtml);
-              if( timer.days == 0 && !dfs.countdownv2.isMobile() && !hideFinalMessage){
+              if( timer.days == 0 && !dfs.countdownv2.isMobile() && !hideFinalMessage[index]){
                 //show ending footer if last day and desktop
                 $(_this).next('div').css('display','block');
               }
@@ -562,7 +565,7 @@ dfs.updateElement = function(){
             });
 
           })(jQuery);
-          dfs.carCountdown.init();
+          
 
     }
 }
